@@ -293,10 +293,7 @@ section {
   background: #6776f4;
   color: #fff;
 }
-.back-to-top.active {
-  visibility: visible;
-  opacity: 1;
-}
+
 
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices

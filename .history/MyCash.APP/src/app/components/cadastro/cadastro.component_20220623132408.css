@@ -1,0 +1,10 @@
+
+
+@media (max-width: 992px) {
+  .footer .footer-top {
+    background-position: center bottom;
+  }
+}
+.footer .footer-top .footer-info {
+  margin-bottom: 30px;
+}

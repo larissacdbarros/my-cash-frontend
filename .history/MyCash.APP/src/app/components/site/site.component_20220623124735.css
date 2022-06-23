@@ -291,7 +291,7 @@ section {
 }
 .back-to-top:hover {
   background: #6776f4;
-  color: #fff;
+  color: rgb(218, 19, 19);
 }
 .back-to-top.active {
   visibility: visible;

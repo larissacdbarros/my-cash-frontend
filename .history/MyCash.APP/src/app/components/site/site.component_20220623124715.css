@@ -286,7 +286,7 @@ section {
 }
 .back-to-top i {
   font-size: 24px;
-  color: #fff;
+  color: rgb(216, 14, 14);
   line-height: 0;
 }
 .back-to-top:hover {

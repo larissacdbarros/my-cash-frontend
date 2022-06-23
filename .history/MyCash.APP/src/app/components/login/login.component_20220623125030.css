@@ -80,12 +80,7 @@ height: 100%;
   font-family: "Nunito", sans-serif;
   margin-top: 3px;
 }
-.footer .footer-top .footer-info p {
-  font-size: 14px;
-  line-height: 24px;
-  margin-bottom: 0;
-  font-family: "Nunito", sans-serif;
-}
+
 .footer .footer-top .social-links a {
   font-size: 20px;
   display: inline-block;

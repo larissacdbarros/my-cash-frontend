@@ -1,23 +1,6 @@
-.divider:after,
-.divider:before {
-content: "";
-flex: 1;
-height: 1px;
-background: #eee;
-}
-.h-custom {
-height: calc(100% - 73px);
-}
-@media (max-width: 450px) {
-.h-custom {
-height: 100%;
-}
-}
-
-
 .footer {
   background: #a9dcf0dc;
-  padding: 0 0 30px 0;
+  padding: 0 0 5px 0;
   font-size: 14px;
 }
 .footer .footer-newsletter {
@@ -56,7 +39,7 @@ height: 100%;
   font-size: 16px;
   padding: 0 30px;
   margin: 3px;
-  background: #81d0f5;
+  background: #4154f1;
   color: #fff;
   transition: 0.3s;
   border-radius: 4px;
