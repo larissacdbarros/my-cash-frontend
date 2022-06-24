@@ -2039,7 +2039,7 @@ section {
 }
 .blog .sidebar .tags ul a span {
   padding-left: 5px;
-  color: #a5c5fe;
+  color: wa;
   font-size: 14px;
 }
 
@@ -2047,7 +2047,7 @@ section {
 # Footer
 --------------------------------------------------------------*/
 .footer {
-  background: #a9dcf0dc;
+  background: #eff6f8dc;
   padding: 0 0 30px 0;
   font-size: 14px;
 }
@@ -2096,7 +2096,7 @@ section {
   background: #5969f3;
 }
 .footer .footer-top {
-  background: white url(../img/footer-bg.png) no-repeat right top;
+  /* background: white url(../img/footer-bg.png) no-repeat right top; */
   background-size: contain;
   border-top: 1px solid #e1ecff;
   border-bottom: 1px solid #e1ecff;
