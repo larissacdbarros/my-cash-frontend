@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css'],
-  
+  Date
 })
 export class DashboardComponent implements OnInit {
 
