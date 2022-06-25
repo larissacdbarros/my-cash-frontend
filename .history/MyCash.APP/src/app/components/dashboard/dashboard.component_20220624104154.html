@@ -9,6 +9,30 @@
                       <h1 class="h2 mb-0 ls-tight" ><img src="assets/img/site/Foto11.png" width="85" height="100"  alt="">MyCash</h1><br>
                       
                   </div> <!-- Actions -->
+
+
+
+
+                  < mat-form-field  aspect = "fill" > 
+  < mat-label > Mês e Ano </ mat-label > 
+  < input  matInput [ matDatepicker ]= "dp" [ formControl ]= "date" > 
+  < mat-hint > MM /AAAA </ mat-hint > 
+  < mat-datepicker-toggle  matSuffix [ for ]= "dp" > </ mat-datepicker-toggle > 
+  <mat-datepicker # dp
+                  startView = "multi-year" 
+                  ( monthSelected ) = "setMonthAndYear($event, dp)" 
+                  panelClass = "example-month-picker" > 
+  </ mat-datepicker > 
+</ mat-form-field >
+                  
+
+
+
+
+
+
+
+
                   <div class="col-sm-1 col-12 text-sm-end">
                     <div class="mx-n1">
                       <a href="" class="btn d-inline-flex btn-sm btn-neutral border-center mx-1"> <span class=" "> <i class="bi bi-arrow-down-short"></i> </span> <span>Mês</span></a>

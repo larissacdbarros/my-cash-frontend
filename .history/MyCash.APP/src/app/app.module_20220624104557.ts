@@ -10,7 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 
 import { CadastroComponent } from './components/cadastro/cadastro.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
