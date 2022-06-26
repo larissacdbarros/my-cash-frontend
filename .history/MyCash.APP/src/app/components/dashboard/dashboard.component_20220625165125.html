@@ -1,0 +1,140 @@
+<div class="h-screen flex-grow-1 overflow-y-lg-auto">
+  <!-- Header -->
+  <header class="">
+      <div class="container-fluid">
+          <div class="mb-npx">
+              <div class="row align-items-center">
+                  <div class="col-sm-6 col-12 mb-4 mb-sm-0">
+                      <!-- Title -->
+                      <h1 class="h2 mb-0 ls-tight" ><img src="assets/img/site/Foto11.png" width="85" height="100"  alt="">MyCash</h1><br>
+
+                  </div> <!-- Actions -->
+                  <div class="col-sm-1 col-12 text-sm-end">
+                    <div class="mx-n1">
+                     <!--<a href="" class="btn d-inline-flex btn-sm btn-neutral border-center mx-1"> <span class=" "> <i class="bi bi-arrow-down-short"></i> </span> <span>Mês</span></a> -->
+                    </div>
+                  </div>
+
+
+
+
+
+
+                  <md-toolbar ng-show="vm.topmenu.enabled" class="md-whiteframe-z2 mdw-top-menu no-transition ng-scope _md md-default-theme _md-toolbar-transitions" aria-hidden="false" md-theme="default" md-theme-watch="true"><div class="md-toolbar-tools"><button class="md-icon-button md-button md-ink-ripple md-default-theme" type="button" ng-transclude="" id="md-main-menu-trigger" ng-click="vm.leftmenu.toggle()" aria-label="Abrir menu"><md-icon class="ng-scope material-icons md-default-theme" role="img" aria-hidden="true">menu</md-icon></button><span ng-bind-html="vm.title" class="ng-binding">Visão geral</span><mdw-moeda-toggler class="ng-isolate-scope"><!-- ngIf: !$ctrl.svc.hidden --></mdw-moeda-toggler><!-- ngIf: vm.leftmenu.pinnedItems.length > 0 --><!-- ngRepeat: item in vm.leftmenu.pinnedItems --><span flex="" class="flex"></span><div layout="row" layout-align="start center" hide-xs="" class="hide-xs layout-align-start-center layout-row"><!-- ngIf: vm.linkExperimentar --><button class="md-stroked md-button ng-scope md-default-theme md-ink-ripple" type="button" ng-transclude="" ng-if="vm.linkExperimentar" ng-click="vm.experimentar()" style="">Experimentar a versão completa</button><!-- end ngIf: vm.linkExperimentar --><!-- ngIf: vm.linkAssinatura --><!-- ngIf: !vm.topmenu.investMod --><button class="md-icon-button md-button ng-scope md-default-theme md-ink-ripple" type="button" ng-transclude="" ng-if="!vm.topmenu.investMod" ng-click="vm.buscarLancamentos()" aria-label="Buscar lançamentos" md-labeled-by-tooltip="md-tooltip-5"><md-icon class="ng-scope md-default-theme material-icons" role="img" aria-hidden="true">search</md-icon></button><!-- end ngIf: !vm.topmenu.investMod --><button class="md-icon-button md-button md-ink-ripple md-default-theme" type="button" ng-transclude="" target="_blank" ng-click="vm.ticket()" aria-label="Fale conosco" md-labeled-by-tooltip="md-tooltip-1"><md-icon class="ng-scope material-icons md-default-theme" role="img" aria-hidden="true">forum</md-icon></button><a class="md-icon-button md-button md-ink-ripple md-default-theme" ng-transclude="" href="http://docs.meudinheiroweb.com.br" target="_blank" aria-label="Ajuda" md-labeled-by-tooltip="md-tooltip-2"><md-icon class="ng-scope material-icons md-default-theme" role="img" aria-hidden="true">help</md-icon></a><button class="md-icon-button md-button md-ink-ripple md-default-theme" type="button" ng-transclude="" ng-click="vm.pdi()" aria-label="Ganhe cupons de desconto" md-labeled-by-tooltip="md-tooltip-3"><md-icon class="ng-scope material-icons md-default-theme" role="img" aria-hidden="true">card_giftcard</md-icon></button><a class="md-icon-button md-button md-ink-ripple md-default-theme" ng-transclude="" href="https://www.calculadora.com.br" target="_blank" aria-label="Calculadoras" md-labeled-by-tooltip="md-tooltip-4"><md-icon md-svg-src="/icons/calculator.svg" ng-hide="vm.loading" class="ng-scope md-default-theme" role="img" aria-hidden="false"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="100%" height="100%" viewBox="0 0 24 24" fit="" preserveAspectRatio="xMidYMid meet" focusable="false"><path d="M7,2H17A2,2 0 0,1 19,4V20A2,2 0 0,1 17,22H7A2,2 0 0,1 5,20V4A2,2 0 0,1 7,2M7,4V8H17V4H7M7,10V12H9V10H7M11,10V12H13V10H11M15,10V12H17V10H15M7,14V16H9V14H7M11,14V16H13V14H11M15,14V16H17V14H15M7,18V20H9V18H7M11,18V20H13V18H11M15,18V20H17V18H15Z"></path></svg></md-icon></a></div><mdw-usuarios-topmenu class="ng-isolate-scope"><button class="btn-nome-usuario md-button md-default-theme md-ink-ripple" type="button" ng-transclude="" aria-label="user" ng-click="vm.openMenu($event)">Cleydson<md-icon class="ng-scope md-default-theme material-icons" role="img" aria-hidden="true">arrow_drop_down</md-icon><mdw-avatar-usr class="top-menu-avatar ng-pristine ng-untouched ng-valid ng-scope ng-isolate-scope ng-not-empty" size="30" ng-model="vm.login" tipo="l" placeholder="vm.login.nome" editable="false" aria-invalid="false"><!-- ngIf: !vm.url --><div ng-if="!vm.url" class="placeholder ng-binding ng-scope" ng-style="vm.style" style="height: 30px; width: 30px; line-height: 30px;">C</div><!-- end ngIf: !vm.url --><!-- ngIf: !!vm.url --><!-- ngIf: vm.editable --></mdw-avatar-usr><div class="md-ripple-container" style=""></div></button></mdw-usuarios-topmenu></div><!-- ngIf: vm.topmenu.secondary --><!-- ngInclude: vm.topmenu.secondaryUrl --><!-- end ngIf: vm.topmenu.secondary --><!-- ngIf: vm.topmenu.tabs.length > 0 --></md-toolbar>
+
+
+
+
+
+
+
+
+
+
+
+
+
+                  <div class="col-sm-5 col-12 text-sm-end">
+                      <div class="mx-n1"><a href="#" class="btn d-inline-flex btn-sm btn-primary mx-5"> <span class=" pe-2"> <i class="bi bi-box-arrow-in-right"></i> </span> <span>Sair</span> </a> </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </header> <!-- Main -->
+  <main class="py-6 bg-surface-secondary">
+      <div class="container-fluid">
+          <!-- Card stats -->
+          <div class="row g-6 mb-6">
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-5">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Saldo Atual</span> <span class="h3 font-bold mb-0">R$ 00,00</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-primary text-white text-lg rounded-circle"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank" viewBox="0 0 16 16">
+                                    <path d="m8 0 6.61 3h.89a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-.5.5H15v7a.5.5 0 0 1 .485.38l.5 2a.498.498 0 0 1-.485.62H.5a.498.498 0 0 1-.485-.62l.5-2A.501.501 0 0 1 1 13V6H.5a.5.5 0 0 1-.5-.5v-2A.5.5 0 0 1 .5 3h.89L8 0ZM3.777 3h8.447L8 1 3.777 3ZM2 6v7h1V6H2Zm2 0v7h2.5V6H4Zm3.5 0v7h1V6h-1Zm2 0v7H12V6H9.5ZM13 6v7h1V6h-1Zm2-1V4H1v1h14Zm-.39 9H1.39l-.25 1h13.72l-.25-1Z"/>
+                                  </svg> </div>
+                              </div>
+                          </div>
+                          <div class="mt-8 mb-0 text-sm">  </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body ">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2 ">Receitas</span> <span class="h3 font-bold mb-0">R$ 00,00</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-success text-white text-lg rounded-circle btn d-inline-flex btn-sm btn btn-outline "> <i class="bi bi-arrow-up"></i> </div>
+                              </div>
+                          </div>
+                          <div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="btn d-inline-flex btn-sm btn btn-outline-success mx-"> <svg xmlns="http://www.w3.org/2000/svg" href="#" class="nav-link active" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg><span  class="text-nowrap text-xs text-muted">Adicionar Receita</span> </span>
+                          </div>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Despesas</span> <span class="h3 font-bold mb-0">R$ 00,00</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-danger  text-white text-lg rounded-circle btn d-inline-flex btn-sm btn btn-outline"> <i class="bi bi-arrow-down"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="btn d-inline-flex btn-sm btn btn-outline-success mx-"> <svg xmlns="http://www.w3.org/2000/svg" href="#" class="nav-link active" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg><span  class="text-nowrap text-xs text-muted">Adicionar Despesa</span> </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <div class="col-xl-3 col-sm-6 col-12">
+                  <div class="card shadow border-0">
+                      <div class="card-body">
+                          <div class="row">
+                              <div class="col"> <span class="h6 font-semibold text-muted text-sm d-block mb-2">Cartão de Crédito</span> <span class="h3 font-bold mb-0">R$ 00,00</span> </div>
+                              <div class="col-auto">
+                                  <div class="icon icon-shape bg-warning text-white text-lg rounded-circle btn d-inline-flex btn-sm btn btn-outline "> <i class="bi bi-credit-card"></i> </div>
+                              </div>
+                          </div>
+                          <div class="mt-2 mb-0 text-sm"> <span class="btn d-inline-flex btn-sm btn btn-outline-success mx-"> <svg xmlns="http://www.w3.org/2000/svg" href="#" class="nav-link active" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2Z"/></svg><span  class="text-nowrap text-xs text-muted">Adicionar Compra</span> </span>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          </div>
+  </main>
+
+</div>
+<footer id="footer" class="footer">
+
+
+
+  <div class="footer-top">
+    <div class="container">
+      <div class="row gy-4">
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="copyright">
+      &copy; Copyright <strong><span>MyCash</span></strong>.
+      Todos os direitos reservados
+    </div>
+    <div class="credits">
+      <!-- All the links in the footer should remain intact. -->
+      <!-- You can delete the links only if you purchased the pro version. -->
+      <!-- Licensing information: https://bootstrapmade.com/license/ -->
+      <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+    </div>
+  </div>
+</footer><!-- End Footer -->

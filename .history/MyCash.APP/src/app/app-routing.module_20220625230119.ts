@@ -18,6 +18,8 @@ const routes: Routes = [
   {path: 'receita', component: ReceitaComponent},
   {path: 'despesa', component: DespesaComponent},
   {path: 'cartaocredito', component: CartaocreditoComponent},
+
+
 ];
 
 @NgModule({
