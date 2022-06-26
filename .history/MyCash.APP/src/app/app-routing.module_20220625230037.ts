@@ -5,8 +5,6 @@ import { DashboardComponent } from './components/componentDashboard/dashboard/da
 import { LoginComponent } from './components/componentSite/login/login.component';
 import { SiteComponent } from './components/componentSite/site/site.component';
 import { ReceitaComponent } from './components/componentDashboard/receita/receita.component';
-import { DespesaComponent } from './components/componentDashboard/despesa/despesa.component';
-import { CartaocreditoComponent } from './components/componentDashboard/cartaocredito/cartaocredito.component';
 
 const routes: Routes = [
 
@@ -16,8 +14,10 @@ const routes: Routes = [
   {path: 'cadastro', component: CadastroComponent},
   {path: 'dashboard', component: DashboardComponent},
   {path: 'receita', component: ReceitaComponent},
-  {path: 'despesa', component: DespesaComponent},
-  {path: 'cartaocredito', component: CartaocreditoComponent},
+  {path: 'despesa', component: De},
+
+
+
 ];
 
 @NgModule({
