@@ -25,26 +25,16 @@ export class DashboardComponent implements OnInit {
 
    }
   openDialog1() {
-    this.receita.open(ReceitaComponent, {
-     width:'40%',
-      height:'40%'
-    });
+    this.receita.open(ReceitaComponent);
   }
 
   openDialog2() {
-    this.despesa.open(DespesaComponent, {
-     width:'40%',
-      height:'40%'
-    });
+    this.despesa.open(DespesaComponent);
   }
 
   openDialog3() {
-    this.cartaocredito.open(CartaocreditoComponent, {
-     width:'40%',
-      height:'40%'
-    });
+    this.cartaocredito.open(CartaocreditoComponent);
   }
-
 
   ngOnInit(): void {
   }

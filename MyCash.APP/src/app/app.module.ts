@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import {HttpClientModule} from '@angular/common/http';
 
 
 import { AppRoutingModule } from './app-routing.module';
@@ -30,17 +31,14 @@ import {MatDialogModule} from '@angular/material/dialog';
     DespesaComponent,
     CartaocreditoComponent,
 
-
-
-
-
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
     BrowserAnimationsModule,
-    MatDialogModule
+    MatDialogModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
