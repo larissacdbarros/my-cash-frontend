@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Receita } from '../../models/Receita';
+import { ReceitaService } from './receita.service';
+
 
 
 @Component({
@@ -8,10 +12,36 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ReceitaComponent implements OnInit {
 
+  formulario: any;
+  public receitas: Receita[];
 
-  constructor() { }
+  constructor(private receitaService: ReceitaService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+    this.CarregarReceitas();
   }
+
+  //get all
+  CarregarReceitas(){
+    this.receitaService.GetAll().subscribe( resultado =>{
+      this.receitas = resultado;
+    }
+    );
+  }
+
+  CadastroReceita(): void{
+    this.formulario = new  FormGroup({
+      descricao: new FormControl(null)
+    });
+    const receita: Receita = this.formulario.value;
+    this.receitaService.CreateReceita(receita).subscribe((resultado) =>{
+        alert('Receita adicionada com sucesso')
+    })
+  }
+
+  //getById
+  
+
+
 
 }
