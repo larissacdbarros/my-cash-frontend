@@ -1,0 +1,20 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <div>
+    <form [formGroup] = "formulario" (ngSubmit)="CadastroReceita()">
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+        </div>
+  
+      </div>
+    </form>
+  </div>
+   
+  <div>
+    <button type="button" class="btn btn-success">Salvar</button>
+    <button  type="button" class="btn btn-danger">Cancelar</button>
+  </div>
+  
+
+</div>
