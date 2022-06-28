@@ -1,0 +1,54 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <form>
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="cityName">
+          <option selected>Categoria</option>
+          <option *ngFor="let categoria of categorias" value="categoria.categoriaId">{{categoria.tipo}}</option>
+        </select>
+
+      </div>
+
+      <div class="col">
+        
+        <select class="form-select" aria-label="Default select example">
+          <option selected>Open this select menu</option>
+          <option value="1">One</option>
+          <option value="2">Two</option>
+          <option value="3">Three</option>
+        </select>
+
+      </div>
+
+
+    </div>
+        
+    
+    <br>
+    
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="">
+      </div>
+    </div>
+    
+    <br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Conta" formControlName="conta">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Data" formControlName="Data">
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="subimt" class="btn btn-sm btn-primary">Salvar</button>
+      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>

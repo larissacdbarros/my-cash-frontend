@@ -1,0 +1,64 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="categoria" (change)="carregarSubcategoria($event)">
+          <option value="" selected>Categoria</option>
+          <option *ngFor="let categoria of categorias" value="{{categoria.categoriaReceitaId}}">{{categoria.tipo}}</option>
+        </select>
+      </div>
+
+      <div class="col">
+
+        <select class="form-select" aria-label="Default select example" formControlName="subcategoriaReceitaId">
+          <option value="" selected>Subcategoria</option>
+          <option *ngFor="let subcategoria of subcategorias" value="{{subcategoria.subcategoriaReceitaId}}">{{subcategoria.tipo}}</option>
+        </select>
+        <span class="text-danger"
+          *ngIf="(formularioControls.subcategoriaReceitaId.touched )  && formularioControls.subcategoriaReceitaId.errors?.required">
+          Enter a valid email address
+        </span>
+
+      </div>
+
+
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="valor">
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="contaId">
+          <option value="" selected>Conta</option>
+          <option *ngFor="let conta of contas" value="{{conta.contaId}}">{{conta.descricao}}</option>
+        </select>
+      </div>
+
+
+      <div class="col">
+        <input type="date" class="form-control" placeholder="Data" formControlName="data">
+
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <label></label>
+      <!-- <pre>{{ formulario.valid }}</pre> mostra se o formulário está válido -->
+
+      <pre>{{ for }}</pre>
+      <button type="subimt" class="btn btn-sm btn-primary" [disabled]="!formulario.valid">Salvar</button>
+      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>

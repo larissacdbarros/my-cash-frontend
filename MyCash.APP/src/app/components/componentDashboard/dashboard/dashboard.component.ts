@@ -19,20 +19,23 @@ import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/c
 export class DashboardComponent implements OnInit {
 
   saldoAtual = "inserir aqui ";
-  receitas = "inserir aqui ";
-  despesas = "inserir aqui ";
-  faturaCartao = "inserir aqui "
+
+  saldoReceitas = "inserir aqui ";
+  saldodespesas = "inserir aqui ";
+  faturaCartao = "inserir aqui ";
+
 
   exibirLista1 = false;
   exibirLista2 = false;
   exibirLista3 = false;
+
 
   constructor(private receita : MatDialog, private despesa : MatDialog, private cartaocredito : MatDialog)  {
 
 
 
    }
-  openDialog1() {
+  openDialogReceita() {
     this.receita.open(ReceitaComponent);
   }
 

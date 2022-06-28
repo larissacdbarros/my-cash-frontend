@@ -15,11 +15,12 @@ import { ReceitaComponent } from './components/componentDashboard/receita/receit
 import { DespesaComponent } from './components/componentDashboard/despesa/despesa.component';
 import { CartaocreditoComponent } from './components/componentDashboard/cartaocredito/cartaocredito.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-import { MatDialogModule} from '@angular/material/dialog';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import {MatDialogModule} from '@angular/material/dialog';
 import { ReceitalistComponent } from './components/componentDashboard/receita/receitalist/receitalist.component';
 import { CartaocreditolistComponent } from './components/componentDashboard/cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { DespesalistComponent } from './components/componentDashboard/despesa/despesalist/despesalist.component';
+
 
 
 
@@ -45,7 +46,9 @@ import { DespesalistComponent } from './components/componentDashboard/despesa/de
     NgbModule,
     BrowserAnimationsModule,
     MatDialogModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

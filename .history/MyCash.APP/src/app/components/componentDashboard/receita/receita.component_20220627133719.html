@@ -1,0 +1,64 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <form>
+
+    <div class="row">
+      <div class="col">
+        
+        <div class="btn-group">
+          <button class="btn btn-secondary dropdown-toggle" type="button" id="defaultDropdown" data-bs-toggle="dropdown" data-bs-auto-close="true" aria-expanded="false">
+            Categoria
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+          </ul>
+        </div>
+        
+        <!-- <input type="text" class="form-control" placeholder="Categoria" formControlName="categoria"> -->
+      </div>
+
+      <div class="col">
+        <div class="dropdown">
+          <button class="btn btn-secondary dropdown-toggle"  role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+            Subcategoria
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="defaultDropdown">
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+            <li><a class="dropdown-item" href="#">Menu item</a></li>
+          </ul>
+        </div>
+        
+        <!-- <input type="text" class="form-control" placeholder="Subcategoria" formControlName="subcategoria"> -->
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="">
+      </div>
+    </div>
+    
+    <br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Conta" formControlName="conta">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Data" formControlName="Data">
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="subimt" class="btn btn-sm btn-primary">Salvar</button>
+      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,52 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <form [formGroup]="formulario" (ngSubmit)="")>
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="categoria" (change)="carregarSubcategoria($event)">
+          <option value="" selected>Categoria</option>
+          <option *ngFor="let categoria of categorias" value="categoria.categoriaId">{{categoria.tipo}}</option>
+        </select>
+
+      </div>
+
+      <div class="col">
+        
+        <select class="form-select" aria-label="Default select example" formControlName="subcategoria" {disabled}="isSubcategoriaVisible">
+          <option value="" selected>Subcategoria</option>
+          <option *ngFor="let subcategoria of subcategorias" value="subcategoria.subcategoriaId">{{subcategoria.tipo}}</option>
+        </select>
+
+      </div>
+
+
+    </div>
+        
+    
+    <br>
+    
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="">
+      </div>
+    </div>
+    
+    <br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Conta" formControlName="conta">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Data" formControlName="Data">
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="subimt" class="btn btn-sm btn-primary">Salvar</button>
+      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>

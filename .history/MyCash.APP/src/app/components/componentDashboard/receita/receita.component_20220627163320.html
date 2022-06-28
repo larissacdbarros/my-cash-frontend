@@ -1,0 +1,65 @@
+<h1>Nova Receita</h1>
+<div class="modal-footer">
+  <form>
+    <div class="row">
+      < class="col">
+        
+
+        <div class="d-inline-block" ngbDropdown #myDrop="ngbDropdown">
+          <button type="button" class="btn btn-outline-primary me-2" id="dropdownManual" ngbDropdownAnchor (focus)="myDrop.open()">Categoria</button>
+          <div ngbDropdownMenu aria-labelledby="dropdownManual" *ngFor="let categoria of categorias">
+            <button ngbDropdownItem>{{categoria.tipo}}</button>
+
+          </div>
+        </div>
+        
+      </div>
+
+      <div class="col">
+        <li class="dropdown">
+          <a class="nav-link dropdown-toggle"  id="userDropdown" role="button"
+              data-toggle="dropdown" data-bs-toggle="dropdown" aria-expanded="false">
+              <span class="mr-2 d-none d-lg-inline text-gray-600" >Subcategoria</span>
+          </a>
+        </li>
+        <div class="dropdown-menu dropdown-menu-right shadow" >
+              <a class="dropdown-item">
+                  <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                  Categoria Receita 1
+              </a>
+              <a class="dropdown-item">
+                <i class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>
+                Categoria Receita 2
+            </a>
+           <!-- <input type="text" class="form-control" placeholder="Subcategoria" formControlName="subcategoria"> -->
+        </div>        
+      </div>
+    </div>
+    
+    <br>
+    
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="">
+      </div>
+    </div>
+    
+    <br>
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Conta" formControlName="conta">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Data" formControlName="Data">
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <button type="subimt" class="btn btn-sm btn-primary">Salvar</button>
+      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+    </div>
+  </form>
+</div>
