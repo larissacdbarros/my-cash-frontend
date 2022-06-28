@@ -1,0 +1,58 @@
+<div class="container">
+  <h1>Lista de Compras no Cartão de Crédito</h1>
+  <table class="table table-striped table-hover" > <!-- <<table class="table table-striped table-hover table-sm" *ngIf="pessoas">-->
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Data</th>
+        <th scope="col">Descrição</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Valor</th>
+        <th scope="col">Ações</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th scope="row"></th> <!-- <tr *ngFor="let receita of receitas">-->
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+
+          <td>
+            <button type="button" class="btn btn-sm btn-outline-info">Editar</button>&nbsp;&nbsp;
+            <button type="button" class="btn btn-sm btn-outline-danger" >Excluir</button>
+        </td>
+      </tr>
+
+
+    </tbody>
+  </table>
+  <br>
+  <!-- Button trigger modal de confirmação de pagamento-->
+<button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Pagar Fatura
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLabel"><b>Tem certeza que deseja pagar a fatura?</b></h2>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <h3><div class="modal-body">
+        Após a confirmação os dados da fatura serão zerados e o valor da faturá será subtraído do saldo atual
+      </div></h3>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-success">Confirmar</button>
+      </div>
+    </div>
+  </div>
+</div>
+  </div>
+
+
