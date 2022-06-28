@@ -17,6 +17,10 @@ import { CartaocreditoComponent } from './components/componentDashboard/cartaocr
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatDialogModule} from '@angular/material/dialog';
+import { ReceitalistComponent } from './components/componentDashboard/receita/receitalist/receitalist.component';
+import { CartaocreditolistComponent } from './components/componentDashboard/cartaocredito/cartaocreditolist/cartaocreditolist.component';
+import { DespesalistComponent } from './components/componentDashboard/despesa/despesalist/despesalist.component';
+
 
 
 
@@ -30,6 +34,10 @@ import {MatDialogModule} from '@angular/material/dialog';
     ReceitaComponent,
     DespesaComponent,
     CartaocreditoComponent,
+    ReceitalistComponent,
+    CartaocreditolistComponent,
+    DespesalistComponent,
+
 
   ],
   imports: [

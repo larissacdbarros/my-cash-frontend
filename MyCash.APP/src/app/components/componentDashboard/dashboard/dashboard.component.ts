@@ -4,6 +4,9 @@ import { Receita } from '../../models/Receita';
 import { CartaocreditoComponent } from '../cartaocredito/cartaocredito.component';
 import { DespesaComponent } from '../despesa/despesa.component';
 import { ReceitaComponent } from '../receita/receita.component';
+import { ReceitalistComponent } from '../receita/receitalist/receitalist.component';
+import { DespesalistComponent } from '../despesa/despesalist/despesalist.component';
+import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/cartaocreditolist.component';
 
 
 
@@ -16,11 +19,19 @@ import { ReceitaComponent } from '../receita/receita.component';
 export class DashboardComponent implements OnInit {
 
   saldoAtual = "inserir aqui ";
+
   saldoReceitas = "inserir aqui ";
   saldodespesas = "inserir aqui ";
   faturaCartao = "inserir aqui ";
 
+
+  exibirLista1 = false;
+  exibirLista2 = false;
+  exibirLista3 = false;
+
+
   constructor(private receita : MatDialog, private despesa : MatDialog, private cartaocredito : MatDialog)  {
+
 
 
    }
@@ -36,9 +47,22 @@ export class DashboardComponent implements OnInit {
     this.cartaocredito.open(CartaocreditoComponent);
   }
 
+  mostrarLista1() {
+    this.exibirLista1 = !this.exibirLista1;
+  }
+
+  mostrarLista2() {
+    this.exibirLista2 = !this.exibirLista2;
+  }
+  mostrarLista3() {
+    this.exibirLista3 = !this.exibirLista3;
+  }
+
   ngOnInit(): void {
   }
 
 
 
 }
+
+
