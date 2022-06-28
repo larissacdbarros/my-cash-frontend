@@ -40,7 +40,7 @@ export class ReceitaComponent implements OnInit {
 
 
 
-  public receitas: Receita[];
+
   public categorias: CategoriaReceita[];
   public subcategorias: SubcategoriaReceita[];
   public contas: Conta[];
@@ -89,24 +89,26 @@ export class ReceitaComponent implements OnInit {
   }
 
   //get all
-  CarregarReceitas(){
-    this.receitaService.GetAll().subscribe( resultado =>{
-      this.receitas = resultado;
-    }
-    );
-  }
+
 
   cadastrar(): void{
+    const receita: Receita = this.formulario.value;
     this.submitted = true;
     if(this.formulario.valid){
-      const receita: Receita = this.formulario.value;
-      this.receitaService.CreateReceita(receita).subscribe((resultado) =>{
-        alert('Receita adicionada com sucesso');
-    })
+      if(receita.receitaId > 0){
+        this.receitaService.Update(receita).subscribe(resultado => {
+          alert('Receita atualizada com sucesso');
+        })
+      }
+      else{
+        const receita: Receita = this.formulario.value;
+        this.receitaService.Create(receita).subscribe((resultado) =>{
+          alert('Receita adicionada com sucesso');
+      });
+      }
 
     }
-
-  }
+    }
 
   get formularioControls() {
     return this.formulario.controls;

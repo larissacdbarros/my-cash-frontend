@@ -3,4 +3,7 @@ export class Receita {
   descricao: string;
   subcategoriaReceitaId: Number;
   contaId: Number;
+  valor: Number;
+  data: Date;
+
 }

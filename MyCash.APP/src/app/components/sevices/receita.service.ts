@@ -27,9 +27,12 @@ GetById(id: number): Observable<Receita>{
   return this.http.get<Receita>(`${this.url}/${id}`);
 }
 
-CreateReceita(receita: Receita):Observable<any>{
-  console.log(receita);
+Create(receita: Receita):Observable<any>{
   return this.http.post<Receita>(this.url, receita, httpOptions);
+}
+
+Update(receita: Receita): Observable<any> {
+  return this.http.put<Receita>(this.url, receita, httpOptions);
 }
 
 

@@ -18,11 +18,10 @@ import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/c
 })
 export class DashboardComponent implements OnInit {
 
-  saldoAtual = "inserir aqui ";
-
-  saldoReceitas = "inserir aqui ";
-  saldodespesas = "inserir aqui ";
-  faturaCartao = "inserir aqui ";
+  saldoAtual: Number;
+  saldoReceitas : Number;
+  saldodespesas : Number;
+  faturaCartao : Number;
 
 
   exibirLista1 = false;
