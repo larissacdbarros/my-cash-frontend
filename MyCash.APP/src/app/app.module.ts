@@ -21,6 +21,9 @@ import { ReceitalistComponent } from './components/componentDashboard/receita/re
 import { CartaocreditolistComponent } from './components/componentDashboard/cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { DespesalistComponent } from './components/componentDashboard/despesa/despesalist/despesalist.component';
 import { UsuarioService } from './components/componentSite/cadastro/usuario.service';
+import { ToastrModule } from 'ngx-toastr';
+import {MatIconModule} from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 
 
@@ -40,6 +43,7 @@ import { UsuarioService } from './components/componentSite/cadastro/usuario.serv
     DespesalistComponent
 
 
+
   ],
   imports: [
     BrowserModule,
@@ -49,7 +53,14 @@ import { UsuarioService } from './components/componentSite/cadastro/usuario.serv
     MatDialogModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    MatIconModule,
+    CommonModule,
+    BrowserAnimationsModule,
+    ToastrModule.forRoot(),
+
+
+
   ],
   providers: [UsuarioService],
   bootstrap: [AppComponent]

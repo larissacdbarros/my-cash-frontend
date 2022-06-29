@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { Component, Inject, OnInit, ViewChild } from '@angular/core';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Receita } from 'src/app/components/models/Receita';
 import { ReceitaService } from 'src/app/components/sevices/receita.service';
 import { DashboardComponent } from '../../dashboard/dashboard.component';
@@ -12,11 +12,12 @@ import { ReceitadetalhesComponent } from '../receitadetalhes/receitadetalhes.com
 @Component({
   selector: 'app-receitalist',
   templateUrl: './receitalist.component.html',
-  styleUrls: ['./receitalist.component.css']
+  styleUrls: ['./receitalist.component.css'],
 })
 export class ReceitalistComponent implements OnInit {
 
   public receitas: Receita[];
+  
 
 
   constructor(private receitaService: ReceitaService,

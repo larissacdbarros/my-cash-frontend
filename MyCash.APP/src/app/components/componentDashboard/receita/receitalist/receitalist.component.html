@@ -1,10 +1,7 @@
 <div class="container">
 <h1>Minhas Receitas</h1>
 
-<table class="table table-striped table-hover" > <!-- <<table class="table table-striped table-hover table-sm" *ngIf="pessoas">-->
-
-
-
+<table class="table table-striped table-hover" >
       <div class="border border-light rounded p-3 shadow">
         <table class="table table-hover">
             <thead>
@@ -21,11 +18,11 @@
             <tbody>
                 <tr *ngFor="let receita of receitas">
                     <td>{{receita.descricao}}</td>
-                    <td>{{receita.subcategoriaReceita.categoria.tipoz}</td>
-                    <td>{{receita.subcategoriaReceitaId}}</td>
-                    <td>{{receita.valor}}</td>
+                    <td>{{receita.subcategoriaReceita.categoriaReceita.tipo}} </td>
+                    <td>{{receita.subcategoriaReceita.tipo}}</td>
+                    <td>R$ {{receita.valor}}</td>
                     <td>{{receita.data}}</td>
-                    <td>{{receita.contaId}}</td>
+                    <td>{{receita.conta.descricao}}</td>
                     <td>
                         <button type="button" class="btn btn-sm btn-primary"(click)="openDialogReceitaEditar(receita.receitaId)">Editar</button> |
                         <button type="button" class="btn btn-sm btn-warning" (click)="openDialogReceitaDetalhes(receita.receitaId)">Detalhes</button> |
@@ -33,8 +30,8 @@
                     </td>
                 </tr>
             </tbody>
-
         </table>
+
     </div>
 </table>
 </div>

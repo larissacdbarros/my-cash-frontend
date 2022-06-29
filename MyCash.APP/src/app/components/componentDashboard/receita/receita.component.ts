@@ -10,6 +10,7 @@ import { ReceitaService } from '../../sevices/receita.service';
 import { SubcategoriaReceitaService } from '../../sevices/subcategoriaReceita.service';
 import { Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { ToastrService } from 'ngx-toastr';
 
 
 
@@ -43,12 +44,12 @@ export class ReceitaComponent implements OnInit {
   public titulo: string;
 
 
-
   constructor(private receitaService: ReceitaService,
               private categoriaReceitaService: CategoriaReceitaService,
               private subcategoriaReceitaService : SubcategoriaReceitaService,
               private contaService : ContaService,
               private fb: FormBuilder,
+              private toastr: ToastrService,
               public dialogRef: MatDialogRef<ReceitaComponent>, @Inject(MAT_DIALOG_DATA) public data: Receita,
               ) { }
 
@@ -72,7 +73,7 @@ export class ReceitaComponent implements OnInit {
   }else{
     this.titulo = 'Nova Receita';
     this.formulario.controls.subcategoriaReceitaId.disable();
-    
+
   }
 
    this.carregarCategoria();
@@ -112,21 +113,21 @@ export class ReceitaComponent implements OnInit {
 
         if(this.formulario.controls.receitaId.value !== null){
         this.receitaService.Update(receita).subscribe(resultado => {
-          alert('Receita atualizada com sucesso');
+          this.toastr.success('Receita atulizada com sucesso!');
           this.dialogRef.close();
         })
       }else{
         this.receitaService.Create(receita).subscribe((resultado) =>{
-          alert('Receita adicionada com sucesso');
+          this.toastr.success('Receita adicionada com sucesso!');
           this.dialogRef.close();
       });
       }
     }
     }
 
-    cancelar(): void{
+  cancelar(): void{
       this.dialogRef.close();
-    }
+   }
 
   get formularioControls() {
     return this.formulario.controls;

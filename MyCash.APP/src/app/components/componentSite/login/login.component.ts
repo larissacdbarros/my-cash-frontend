@@ -27,8 +27,6 @@ export class LoginComponent implements OnInit {
         if (this.usuariosLista[i].email == this.email &&
         this.usuariosLista[i].senha == this.password){
         this.router.navigate(['/dashboard']);
-
-
         }
       }
     });
