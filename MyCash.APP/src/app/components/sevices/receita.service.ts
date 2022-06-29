@@ -23,7 +23,7 @@ GetAll(): Observable<Receita[]>{
   return this.http.get<Receita[]>(`${this.url}`);
 }
 
-GetById(id: number): Observable<Receita>{
+GetById(id: Number): Observable<Receita>{
   return this.http.get<Receita>(`${this.url}/${id}`);
 }
 
@@ -32,7 +32,11 @@ Create(receita: Receita):Observable<any>{
 }
 
 Update(receita: Receita): Observable<any> {
-  return this.http.put<Receita>(this.url, receita, httpOptions);
+  return this.http.put<Receita>(`${this.url}/${receita.receitaId}`, receita, httpOptions);
+}
+
+Delete(receitaId: Number): Observable<any>{
+  return this.http.delete<Number>(`${this.url}/${receitaId}`, httpOptions);
 }
 
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
 import { CategoriaReceita } from '../../models/CategoriaReceita';
 import { Conta } from '../../models/Conta';
@@ -9,6 +9,7 @@ import { ContaService } from '../../sevices/conta.service';
 import { ReceitaService } from '../../sevices/receita.service';
 import { SubcategoriaReceitaService } from '../../sevices/subcategoriaReceita.service';
 import { Validators } from '@angular/forms';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 
 
@@ -20,16 +21,9 @@ import { Validators } from '@angular/forms';
 })
 export class ReceitaComponent implements OnInit {
 
-  // formulario: FormGroup = new  FormGroup({
-  //   categoria: new FormControl(''),
-  //   subcategoriaReceitaId: new FormControl(''),
-  //   descricao: new FormControl(''),
-  //   valor:new FormControl(''),
-  //   contaId: new FormControl(''),
-  //   data: new FormControl('')
-  // });
 
   formulario = this.fb.group({
+    receitaId: [null],
     categoria: ['', Validators.required],
     subcategoriaReceitaId:['', Validators.required],
     descricao:['', Validators.required],
@@ -46,6 +40,7 @@ export class ReceitaComponent implements OnInit {
   public contas: Conta[];
 
   public submitted = false;
+  public titulo: string;
 
 
 
@@ -53,12 +48,34 @@ export class ReceitaComponent implements OnInit {
               private categoriaReceitaService: CategoriaReceitaService,
               private subcategoriaReceitaService : SubcategoriaReceitaService,
               private contaService : ContaService,
-              private fb: FormBuilder
+              private fb: FormBuilder,
+              public dialogRef: MatDialogRef<ReceitaComponent>, @Inject(MAT_DIALOG_DATA) public data: Receita,
               ) { }
 
   ngOnInit() {
+
+  if(this.data!==null && this.data.receitaId !== null){
+      this.receitaService.GetById(this.data.receitaId).subscribe(resultado => {
+
+      this.formulario.controls.receitaId.setValue(resultado.receitaId);
+      this.formulario.controls.categoria.setValue(resultado.subcategoriaReceita.categoriaReceitaId);
+      this.formulario.controls.subcategoriaReceitaId.setValue(resultado.subcategoriaReceitaId);
+      this.formulario.controls.descricao.setValue(resultado.descricao);
+      this.formulario.controls.valor.setValue(resultado.valor);
+      this.formulario.controls.contaId.setValue(resultado.contaId);
+      this.formulario.controls.data.setValue(resultado.data);
+
+      this.carregarSubcategoria();
+    });
+    this.titulo = 'Atualizar Receita';
+
+  }else{
+    this.titulo = 'Nova Receita';
+    this.formulario.controls.subcategoriaReceitaId.disable();
+    
+  }
+
    this.carregarCategoria();
-   this.formulario.controls['subcategoriaReceitaId'].disable();
    this.carregarConta();
   }
 
@@ -74,48 +91,44 @@ export class ReceitaComponent implements OnInit {
     });
   }
 
-  carregarSubcategoria(event: Event){
-
-    if(this.formulario.get('categoria').value != ''){
-      this.formulario.controls['subcategoriaReceitaId'].enable();
+  carregarSubcategoria(){
+   console.log(this.formulario.controls.categoria.value)
+    if(this.formulario.controls.categoria.value !== ''){
+      this.formulario.controls.subcategoriaReceitaId.enable();
       this.subcategoriaReceitaService.GetAll().subscribe(resultado => {
         this.subcategorias = resultado;
       });
     }else{
-      this.formulario.controls['subcategoriaReceitaId'].setValue('');
-      this.formulario.controls['subcategoriaReceitaId'].disable();
+      this.formulario.controls.subcategoriaReceitaId.setValue(this.formulario.controls.subcategoriaReceitaId);
+      this.formulario.controls.subcategoriaReceitaId.disable();
       this.subcategorias = [];
     }
   }
 
-  //get all
-
-
   cadastrar(): void{
-    const receita: Receita = this.formulario.value;
     this.submitted = true;
     if(this.formulario.valid){
-      if(receita.receitaId > 0){
+      const receita: Receita = this.formulario.value;
+
+        if(this.formulario.controls.receitaId.value !== null){
         this.receitaService.Update(receita).subscribe(resultado => {
           alert('Receita atualizada com sucesso');
+          this.dialogRef.close();
         })
-      }
-      else{
-        const receita: Receita = this.formulario.value;
+      }else{
         this.receitaService.Create(receita).subscribe((resultado) =>{
           alert('Receita adicionada com sucesso');
+          this.dialogRef.close();
       });
       }
-
     }
+    }
+
+    cancelar(): void{
+      this.dialogRef.close();
     }
 
   get formularioControls() {
     return this.formulario.controls;
   }
-  //getById
-
-
-
-
 }

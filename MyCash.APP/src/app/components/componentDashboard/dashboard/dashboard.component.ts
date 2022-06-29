@@ -7,6 +7,7 @@ import { ReceitaComponent } from '../receita/receita.component';
 import { ReceitalistComponent } from '../receita/receitalist/receitalist.component';
 import { DespesalistComponent } from '../despesa/despesalist/despesalist.component';
 import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/cartaocreditolist.component';
+import { ReceitaService } from '../../sevices/receita.service';
 
 
 
@@ -23,19 +24,23 @@ export class DashboardComponent implements OnInit {
   saldodespesas : Number;
   faturaCartao : Number;
 
+   public receitas: Receita[];
 
   exibirLista1 = false;
   exibirLista2 = false;
   exibirLista3 = false;
 
 
-  constructor(private receita : MatDialog, private despesa : MatDialog, private cartaocredito : MatDialog)  {
+  constructor(private receita : MatDialog, private despesa : MatDialog,
+              private cartaocredito : MatDialog,
+              private receitaService: ReceitaService)  {
 
 
 
    }
-  openDialogReceita() {
+  openDialogAdicionarReceita() {
     this.receita.open(ReceitaComponent);
+
   }
 
   openDialog2() {

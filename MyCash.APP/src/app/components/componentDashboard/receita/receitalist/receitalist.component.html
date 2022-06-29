@@ -5,7 +5,7 @@
 
 
 
-      <div class="border border-light rounded p-5 shadow">
+      <div class="border border-light rounded p-3 shadow">
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -21,15 +21,15 @@
             <tbody>
                 <tr *ngFor="let receita of receitas">
                     <td>{{receita.descricao}}</td>
-                    <td>categoria vai aqui</td>
+                    <td>{{receita.subcategoriaReceita.categoria.tipoz}</td>
                     <td>{{receita.subcategoriaReceitaId}}</td>
                     <td>{{receita.valor}}</td>
                     <td>{{receita.data}}</td>
                     <td>{{receita.contaId}}</td>
                     <td>
-                        <button type="button" class="btn btn-sm btn-primary"(click)="openDialogReceita()">Editar</button> |
-                        <button type="button" class="btn btn-sm btn-warning">Detalhes</button> |
-                        <button type="button" class="btn btn-sm btn-danger">Deletar</button>
+                        <button type="button" class="btn btn-sm btn-primary"(click)="openDialogReceitaEditar(receita.receitaId)">Editar</button> |
+                        <button type="button" class="btn btn-sm btn-warning" (click)="openDialogReceitaDetalhes(receita.receitaId)">Detalhes</button> |
+                        <button type="button" class="btn btn-sm btn-danger" (click)="openDialogDeletarReceita(receita.receitaId)">Deletar</button>
                     </td>
                 </tr>
             </tbody>
@@ -38,4 +38,5 @@
     </div>
 </table>
 </div>
+
 
