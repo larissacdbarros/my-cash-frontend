@@ -12,24 +12,24 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
         <div>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
-             <h4><p>Hora de transformar suas finanças</p></h4>
-
+             <h1><p>Hora de transformar suas finanças</p></h1>
           </div>
           <br>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <label class="form-label" for="form3Example3">E-mail</label>
-            <input [(ngModel)]="email" type="email" id="form3Example3" class="form-control form-control-lg"
-              placeholder="Seu Email" />
-
+            <input formControlName="Email" id="email"  type="text"  class="form-control"  placeholder="Email" required/>
+           <!-- <div ngIf="propriedade.Email.touched && propriedade.Email.invalid">
+              <label style="color: red;"> Campo Obrigatorio!</label>
+            </div>-->
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <label class="form-label" for="form3Example4">Senha</label>
-            <input [(ngModel)]="password" type="number" id="form3Example4" class="form-control form-control-lg"
-              placeholder="Infome sua senha" />
+            <input formControlName="Senha" id="Senha"  type="password"   class="form-control"  placeholder="Senha" required />
+          <!-- <div ngIf="propriedade.Senha.touched && propriedade.Senha.invalid">
+              <label style="color: red;"> Campo Obrigatorio!</label>
+            </div>-->
 
           </div>
 
@@ -47,7 +47,7 @@
           <div id="buttonbar"></div>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button"  class="btn btn-success btn-lg"
-              style="  background: #288535dc" (click)="Logar()" >Entrar</button>
+              style="  background: #288535dc"  (click)="Logar()" >Entrar</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">É novo aqui? <a href="#!"
                 class="link-danger" routerLink="/cadastro">Cadastre-se!</a></p>
           </div>
