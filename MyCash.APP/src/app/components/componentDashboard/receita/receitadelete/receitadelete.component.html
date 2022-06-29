@@ -1,15 +1,12 @@
 <div>
-  <h1>Tem certeza que deja deletar a receita?</h1>
-  <div class="modal-footer">
-    infos teste <br>
-    <br>
-    <br>
-    <div>
-      <button type="button" class="btn btn-sm btn-secondary" (click)="naoDeletar()">Não</button>
-      <button type="button" class="btn btn-sm btn-danger" (click)="delete(data.receitaId)">Sim</button>
+  <h1>Deja deletar a receita?</h1>
+
+  <div class=""> <h4>Após a confirmação os dados  serão deletados permanentimente.</h4><div><br>
+    <div class="col-lg-12" style="text-align: right;">
+      <button type="button" class="btn btn-sm btn-danger " (click)="delete(data.receitaId)">Confirmar</button>  &nbsp; &nbsp; &nbsp; &nbsp;
+      <button type="button" class="btn btn-sm btn-success" (click)="naoDeletar()">Voltar</button>
+
+    </div>
     </div>
 
   </div>
-
-</div>
-
