@@ -10,7 +10,7 @@
           class="img-fluid" alt="Sample image">
       </div>
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
-        <form>
+        <div>
           <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
              <h4><p>Hora de transformar suas finanças</p></h4>
 
@@ -20,7 +20,7 @@
           <!-- Email input -->
           <div class="form-outline mb-4">
             <label class="form-label" for="form3Example3">E-mail</label>
-            <input type="email" id="form3Example3" class="form-control form-control-lg"
+            <input [(ngModel)]="email" type="email" id="form3Example3" class="form-control form-control-lg"
               placeholder="Seu Email" />
 
           </div>
@@ -28,7 +28,7 @@
           <!-- Password input -->
           <div class="form-outline mb-3">
             <label class="form-label" for="form3Example4">Senha</label>
-            <input type="password" id="form3Example4" class="form-control form-control-lg"
+            <input [(ngModel)]="password" type="number" id="form3Example4" class="form-control form-control-lg"
               placeholder="Infome sua senha" />
 
           </div>
@@ -41,18 +41,18 @@
                 Manter-me conectado
               </label>
             </div>
-            <a href="#!" class="text-body">Esqueceu a senha?</a>
+
           </div>
           <div id="buttonbar">
           <div id="buttonbar"></div>
           <div class="text-center text-lg-start mt-4 pt-2">
             <button type="button"  class="btn btn-success btn-lg"
-              style="  background: #288535dc" routerLink ="/dashboard">Entrar</button>
+              style="  background: #288535dc" (click)="Logar()" >Entrar</button>
             <p class="small fw-bold mt-2 pt-1 mb-0">É novo aqui? <a href="#!"
                 class="link-danger" routerLink="/cadastro">Cadastre-se!</a></p>
           </div>
         </div>
-        </form>
+
       </div>
     </div>
   </div>
@@ -90,5 +90,5 @@
       </div>
     </footer><!-- End Footer -->
 
-
+  </div>
 </section>
