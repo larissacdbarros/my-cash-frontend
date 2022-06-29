@@ -20,6 +20,7 @@ import {MatDialogModule} from '@angular/material/dialog';
 import { ReceitalistComponent } from './components/componentDashboard/receita/receitalist/receitalist.component';
 import { CartaocreditolistComponent } from './components/componentDashboard/cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { DespesalistComponent } from './components/componentDashboard/despesa/despesalist/despesalist.component';
+import { UsuarioService } from './components/componentSite/cadastro/usuario.service';
 
 
 
@@ -36,7 +37,7 @@ import { DespesalistComponent } from './components/componentDashboard/despesa/de
     CartaocreditoComponent,
     ReceitalistComponent,
     CartaocreditolistComponent,
-    DespesalistComponent,
+    DespesalistComponent
 
 
   ],
@@ -50,7 +51,7 @@ import { DespesalistComponent } from './components/componentDashboard/despesa/de
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [UsuarioService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
