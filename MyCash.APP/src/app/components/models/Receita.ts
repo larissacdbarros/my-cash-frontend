@@ -5,5 +5,7 @@ export class Receita {
   contaId: Number;
   valor: Number;
   data: Date;
+  subcategoriaReceita: any;
+  conta: any;
 
 }

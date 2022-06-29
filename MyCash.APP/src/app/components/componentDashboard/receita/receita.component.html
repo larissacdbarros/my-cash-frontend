@@ -1,9 +1,9 @@
-<h1>Nova Receita</h1>
+<h1>{{titulo}}</h1>
 <div class="modal-footer">
   <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
     <div class="row">
       <div class="col">
-        <select class="form-select" aria-label="Default select example" formControlName="categoria" (change)="carregarSubcategoria($event)">
+        <select class="form-select" aria-label="Default select example" formControlName="categoria" (change)="carregarSubcategoria()">
           <option value="" selected>Categoria</option>
           <option *ngFor="let categoria of categorias" value="{{categoria.categoriaReceitaId}}">{{categoria.tipo}}</option>
         </select>
@@ -21,7 +21,6 @@
         </span>
 
       </div>
-
 
     </div>
 
@@ -57,7 +56,8 @@
       <!-- <pre>{{ formulario.valid }}</pre> mostra se o formulário está válido -->
 
       <button type="subimt" class="btn btn-sm btn-primary" [disabled]="!formulario.valid">Salvar</button>
-      <button type="button" class="btn btn-sm btn-secondary">Cancelar</button>
+      <button type="button" class="btn btn-sm btn-secondary"(click)="cancelar()">Cancelar</button>
     </div>
   </form>
 </div>
+
