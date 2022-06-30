@@ -15,7 +15,7 @@ const httpOptions = {
 })
 export class DespesaCartaoService {
 
-  url = `${environment.baseUrl}/api/DespesasCartao` ;
+  url = `${environment.baseUrl}/api/despesaCartao` ;
 constructor(private http: HttpClient) { }
 
 GetAll(): Observable<DespesaCartao[]>{

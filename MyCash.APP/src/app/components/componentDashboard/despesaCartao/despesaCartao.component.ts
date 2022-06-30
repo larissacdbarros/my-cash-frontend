@@ -2,7 +2,6 @@ import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
-import { CartaoCredito } from '../../models/CartaoCredito';
 import { CategoriaDespesa } from '../../models/CategoriaDespesa';
 import { DespesaCartao } from '../../models/DespesaCartao';
 import { SubcategoriaDespesa } from '../../models/SubcategoriaDespesa';
@@ -11,6 +10,8 @@ import { CategoriaDespesaService } from '../../sevices/categoriaDespesa.service'
 import { DespesaCartaoService } from '../../sevices/despesaCartao.service';
 import { SubcategoriaDespesaService } from '../../sevices/subcategoriaDespesa.service';
 import { Validators } from '@angular/forms';
+import { ContaService } from '../../sevices/conta.service';
+import { Conta } from '../../models/Conta';
 
 @Component({
   selector: 'app-despesaCartao',
@@ -21,19 +22,20 @@ export class DespesaCartaoComponent implements OnInit {
 
   formulario = this.fb.group({
     despesaCartaoId: [null],
-    cartaoCreditoId: ['', Validators.required],
     descricao:['', Validators.required],
     categoria: ['', Validators.required],
     subcategoriaDespesaId:['', Validators.required],
     valor: ['', Validators.required],
-    data:['', Validators.required]
+    data:['', Validators.required],
+    contaId: ['', Validators.required]
 
   });
 
 
   public categorias: CategoriaDespesa[];
   public subcategorias: SubcategoriaDespesa[];
-  public cartoes: CartaoCredito[];
+  public contas: Conta[];
+
 
   public submitted = false;
   public titulo: string;
@@ -41,7 +43,7 @@ export class DespesaCartaoComponent implements OnInit {
   constructor(private despesaCartaoService: DespesaCartaoService,
     private categoriaDespesaService: CategoriaDespesaService,
     private subcategoriaDespesaSevice: SubcategoriaDespesaService,
-    private cartaoCreditoService: CartaoCreditoService,
+    private contaService: ContaService,
     private fb: FormBuilder,
     private toastr: ToastrService,
     public dialogRef: MatDialogRef<DespesaCartaoComponent>, @Inject(MAT_DIALOG_DATA) public data: DespesaCartao) { }
@@ -50,11 +52,11 @@ export class DespesaCartaoComponent implements OnInit {
     if(this.data!==null && this.data.despesaCartaoId !== null){
       this.despesaCartaoService.GetById(this.data.despesaCartaoId).subscribe(resultado => {
 
-      this.formulario.controls.despesaCartaoId.setValue(resultado.despesaCartaoId);
       this.formulario.controls.descricao.setValue(resultado.descricao);
       this.formulario.controls.categoria.setValue(resultado.subcategoriaDespesa.categoriaDespesaId);
       this.formulario.controls.subcategoriaDespesaId.setValue(resultado.subcategoriaDespesaId);
       this.formulario.controls.valor.setValue(resultado.valor);
+      this.formulario.controls.contaId.setValue(resultado.fatura.contaId);
       this.formulario.controls.data.setValue(resultado.data);
 
       this.carregarSubcategoria();
@@ -68,7 +70,7 @@ export class DespesaCartaoComponent implements OnInit {
   }
 
    this.carregarCategoria();
-   this.carregarCartao();
+   this.carregarConta();
   }
 
 
@@ -79,11 +81,12 @@ export class DespesaCartaoComponent implements OnInit {
     });
   }
 
-  carregarCartao(){
-    this.cartaoCreditoService.GetAll().subscribe(resultado => {
-      this.cartoes = resultado;
+  carregarConta(){
+    this.contaService.GetAll().subscribe(resultado => {
+      this.contas = resultado;
     });
   }
+
 
 
   carregarSubcategoria(){
