@@ -1,5 +1,63 @@
-<h1>Teste Modal Despesa</h1>
+<h1>{{titulo}}</h1>
 <div class="modal-footer">
-  <button type="button" class="btn btn-success">Salvar</button>
-  <button type="button" class="btn btn-danger">Cancelar</button>
+  <form [formGroup]="formulario" (ngSubmit)="cadastrar()">
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="categoria" (change)="carregarSubcategoria()">
+          <option value="" selected>Categoria</option>
+          <option *ngFor="let categoria of categorias" value="{{categoria.categoriaDespesaId}}">{{categoria.tipo}}</option>
+        </select>
+      </div>
+
+      <div class="col">
+
+        <select class="form-select" aria-label="Default select example" formControlName="subcategoriaReceitaId">
+          <option value="" selected>Subcategoria</option>
+          <option *ngFor="let subcategoria of subcategorias" value="{{subcategoria.subcategoriaDespesaId}}">{{subcategoria.tipo}}</option>
+        </select>
+        <span class="text-danger"
+          *ngIf="(formularioControls.subcategoriaDespesaContaId.touched ||  submitted ) && formularioControls.subcategoriaDespesaContaId.errors?.required">
+          Subcategoria não foi definida
+        </span>
+
+      </div>
+
+    </div>
+
+    <br>
+
+    <div class="row">
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Descrição" formControlName="descricao" >
+      </div>
+      <div class="col">
+        <input type="text" class="form-control" placeholder="Valor" formControlName="valor">
+      </div>
+    </div>
+
+    <br>
+    <div class="row">
+      <div class="col">
+        <select class="form-select" aria-label="Default select example" formControlName="contaId">
+          <option value="" selected>Conta</option>
+          <option *ngFor="let conta of contas" value="{{conta.contaId}}">{{conta.descricao}}</option>
+        </select>
+      </div>
+
+
+      <div class="col">
+        <input type="date" class="form-control" placeholder="Data" formControlName="data">
+
+      </div>
+    </div>
+    <br>
+    <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+      <label></label>
+      <!-- <pre>{{ formulario.valid }}</pre> mostra se o formulário está válido -->
+
+      <button type="submit" class="btn btn-sm btn-success" [disabled]="!formulario.valid">Salvar</button>
+      <button type="button" class="btn btn-sm btn-danger"(click)="cancelar()">Cancelar</button>
+    </div>
+  </form>
 </div>
+
