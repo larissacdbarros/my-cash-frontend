@@ -22,7 +22,7 @@ export class DashboardComponent implements OnInit {
 
   saldoAtual: Number;
   saldoReceitas : Number;
-  saldodespesas : Number;
+  saldoDespesas : Number;
   faturaCartao : Number;
 
    public receitas: Receita[];
@@ -45,7 +45,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
-  openDialog2() {
+  openDialogAdicionarDespesaConta() {
     this.despesa.open(DespesaComponent);
   }
 
@@ -57,7 +57,7 @@ export class DashboardComponent implements OnInit {
     this.exibirLista1 = !this.exibirLista1;
   }
 
-  mostrarLista2() {
+  listarDespesaConta() {
     this.exibirLista2 = !this.exibirLista2;
   }
   listarDespesaCartao() {

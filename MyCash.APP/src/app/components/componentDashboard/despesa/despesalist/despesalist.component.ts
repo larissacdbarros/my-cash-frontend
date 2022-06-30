@@ -25,9 +25,10 @@ export class DespesalistComponent implements OnInit {
     }
     );
   }
+
   openDialogDespesaContaEditar(id: Number) {
     const dialogRef = this.dialog.open(DespesaComponent,
-      {data: {despesaId: id}});
+      {data: {despesaContaId: id}});
       dialogRef.afterClosed().subscribe(result => {
       this.despesaContaService.GetAll().subscribe( resultado =>{
         this.despesaConta = resultado;

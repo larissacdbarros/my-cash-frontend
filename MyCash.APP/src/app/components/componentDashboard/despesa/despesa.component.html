@@ -11,12 +11,12 @@
 
       <div class="col">
 
-        <select class="form-select" aria-label="Default select example" formControlName="subcategoriaReceitaId">
+        <select class="form-select" aria-label="Default select example" formControlName="subcategoriaDespesaId">
           <option value="" selected>Subcategoria</option>
           <option *ngFor="let subcategoria of subcategorias" value="{{subcategoria.subcategoriaDespesaId}}">{{subcategoria.tipo}}</option>
         </select>
         <span class="text-danger"
-          *ngIf="(formularioControls.subcategoriaDespesaContaId.touched ||  submitted ) && formularioControls.subcategoriaDespesaContaId.errors?.required">
+          *ngIf="(formularioControls.subcategoriaDespesaId.touched ||  submitted ) && formularioControls.subcategoriaDespesaId.errors?.required">
           Subcategoria não foi definida
         </span>
 

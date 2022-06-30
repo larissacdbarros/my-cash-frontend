@@ -1,13 +1,15 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { ToastrService } from 'ngx-toastr/toastr/toastr.service';
+import { ToastrService } from 'ngx-toastr';
 import { CategoriaDespesa } from '../../models/CategoriaDespesa';
 import { Conta } from '../../models/Conta';
 import { DespesaConta } from '../../models/DespesaConta';
 import { SubcategoriaDespesa } from '../../models/SubcategoriaDespesa';
+import { CategoriaDespesaService } from '../../sevices/categoriaDespesa.service';
 import { ContaService } from '../../sevices/conta.service';
 import { DespesaContaService } from '../../sevices/despesaConta.service';
+import { SubcategoriaDespesaService } from '../../sevices/subcategoriaDespesa.service';
 
 
 @Component({
@@ -18,12 +20,12 @@ import { DespesaContaService } from '../../sevices/despesaConta.service';
 export class DespesaComponent implements OnInit {
 
   formulario = this.fb.group({
-    DespesaContaId: [null],
-    categoria: ['', Validators.required],
-    subcategoriaDespesaContaId:['', Validators.required],
+    despesaContaId: [null],
     descricao:['', Validators.required],
-    valor: ['', Validators.required],
+    categoria: ['', Validators.required],
+    subcategoriaDespesaId:['', Validators.required],
     contaId:['', Validators.required],
+    valor: ['', Validators.required],
     data:['', Validators.required]
   });
 
@@ -37,9 +39,9 @@ export class DespesaComponent implements OnInit {
   public titulo: string;
 
   constructor(private despesaContaService: DespesaContaService,
-              private categoriaCategoriaDespesa: CategoriaDespesa,
-              private subcategoriaDespesa : SubcategoriaDespesa,
-              private contaService : DespesaContaService,
+              private categoriaDespesaService: CategoriaDespesaService,
+              private subcategoriaDespesaSevice : SubcategoriaDespesaService,
+              private contaService : ContaService,
               private fb: FormBuilder,
               private toastr: ToastrService,
               public dialogRef: MatDialogRef<DespesaComponent>, @Inject(MAT_DIALOG_DATA) public data: DespesaConta,
@@ -54,13 +56,12 @@ export class DespesaComponent implements OnInit {
 
       this.formulario.controls.despesaContaId.setValue(resultado.despesaContaId);
       this.formulario.controls.descricao.setValue(resultado.descricao);
-      this.formulario.controls.categoriaDespesaId.setValue(resultado.categoriaDespesaId);
+      this.formulario.controls.categoria.setValue(resultado.subcategoriaDespesa.categoriaDespesaId);
+      this.formulario.controls.subcategoriaDespesaId.setValue(resultado.subcategoriaDespesaId);
       this.formulario.controls.contaId.setValue(resultado.contaId);
-      this.formulario.controls.conta.setValue(resultado.conta);
       this.formulario.controls.valor.setValue(resultado.valor);
       this.formulario.controls.data.setValue(resultado.data);
-      this.formulario.controls.subcategoriadespesa.setValue(resultado.subcategoriadespesa);
-      this.formulario.controls.subcategoriaDespesaId.setValue(resultado.subcategoriaDespesaId);
+
 
       this.carregarSubcategoria();
     });
@@ -68,7 +69,7 @@ export class DespesaComponent implements OnInit {
 
   }else{
     this.titulo = 'Nova Despesa';
-    this.formulario.controls.subcategoriaDespesaContaId.disable();
+    this.formulario.controls.subcategoriaDespesaId.disable();
   }
 
  this.carregarCategoria();
@@ -76,7 +77,7 @@ export class DespesaComponent implements OnInit {
 }
 
 carregarCategoria(){
-  this.categoriaCategoriaDespesa.GetAll().subscribe(resultado => {
+  this.categoriaDespesaService.GetAll().subscribe(resultado => {
     this.categorias = resultado;
   });
 }
@@ -90,13 +91,13 @@ carregarConta(){
 carregarSubcategoria(){
   console.log(this.formulario.controls.categoria.value)
    if(this.formulario.controls.categoria.value !== ''){
-     this.formulario.controls.subcategoriaDespesaContaId.enable();
-     this.subcategoriaDespesaContaService.GetAll().subscribe(resultado => {
+     this.formulario.controls.subcategoriaDespesaId.enable();
+     this.subcategoriaDespesaSevice.GetAll().subscribe(resultado => {
        this.subcategorias = resultado;
      });
    }else{
-     this.formulario.controls.subcategoriaDespesaContaId.setValue(this.formulario.controls.subcategoriaDespesaContaId);
-     this.formulario.controls.subcategoriaDespesaContaId.disable();
+     this.formulario.controls.subcategoriaDespesaId.setValue(this.formulario.controls.subcategoriaDespesaId);
+     this.formulario.controls.subcategoriaDespesaId.disable();
      this.subcategorias = [];
    }
  }
@@ -108,7 +109,7 @@ carregarSubcategoria(){
 
       if(this.formulario.controls.despesaContaId.value !== null){
       this.despesaContaService.Update(despesaConta).subscribe(resultado => {
-        this.toastr.success('Despesa atulizada com sucesso!');
+        this.toastr.success('Despesa atualizada com sucesso!');
         this.dialogRef.close();
       })
     }else{

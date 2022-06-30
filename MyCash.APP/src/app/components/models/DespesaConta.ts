@@ -1,11 +1,10 @@
 export class DespesaConta {
   despesaContaId: Number;
   descricao: string;
-  categoriaDespesaId: Number;
   subcategoriaDespesaId: Number;
+  subcategoriaDespesa: any;
   contaId: Number;
   conta: any;
   valor: Number;
   data: Date;
- subcategoriadespesa: any;
 }
