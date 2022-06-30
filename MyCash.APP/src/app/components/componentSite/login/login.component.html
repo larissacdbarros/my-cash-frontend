@@ -1,7 +1,5 @@
 
 <!--codgo de teste-->
-
-
 <section class="vh-100">
   <div class="container-fluid h-custom">
     <div class="row d-flex justify-content-center align-items-center h-100">
@@ -15,24 +13,20 @@
              <h1><p>Hora de transformar suas finanças</p></h1>
           </div>
           <br>
-
           <!-- Email input -->
           <div class="form-outline mb-4">
-            <input formControlName="Email" id="email"  type="text"  class="form-control"  placeholder="Email" required/>
+            <input  id="email"  type="text"  class="form-control"  placeholder="Email"[(ngModel)]="email" />
            <!-- <div ngIf="propriedade.Email.touched && propriedade.Email.invalid">
               <label style="color: red;"> Campo Obrigatorio!</label>
             </div>-->
           </div>
-
           <!-- Password input -->
           <div class="form-outline mb-3">
-            <input formControlName="Senha" id="Senha"  type="password"   class="form-control"  placeholder="Senha" required />
+            <input id="Senha"  type="password"   class="form-control"   placeholder="Senha" [(ngModel)]="password" />
           <!-- <div ngIf="propriedade.Senha.touched && propriedade.Senha.invalid">
               <label style="color: red;"> Campo Obrigatorio!</label>
             </div>-->
-
           </div>
-
           <div class="d-flex justify-content-between align-items-center">
             <!-- Checkbox -->
             <div class="form-check mb-0">
@@ -41,7 +35,6 @@
                 Manter-me conectado
               </label>
             </div>
-
           </div>
           <div id="buttonbar">
           <div id="buttonbar"></div>
@@ -52,43 +45,25 @@
                 class="link-danger" routerLink="/cadastro">Cadastre-se!</a></p>
           </div>
         </div>
-
       </div>
     </div>
   </div>
-
-
-
-
-
-    <!-- Right -->
-
-
     <footer id="footer" class="footer">
-
-
-
       <div class="footer-top">
         <div class="container">
           <div class="row gy-4">
           </div>
         </div>
       </div>
-
       <div class="container">
         <div class="copyright">
           &copy; Copyright <strong><span>MyCash</span></strong>.
           Todos os direitos reservados
         </div>
         <div class="credits">
-          <!-- All the links in the footer should remain intact. -->
-          <!-- You can delete the links only if you purchased the pro version. -->
-          <!-- Licensing information: https://bootstrapmade.com/license/ -->
-          <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/flexstart-bootstrap-startup-template/ -->
           Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
         </div>
       </div>
     </footer><!-- End Footer -->
-
   </div>
 </section>
