@@ -113,7 +113,7 @@ export class ReceitaComponent implements OnInit {
 
         if(this.formulario.controls.receitaId.value !== null){
         this.receitaService.Update(receita).subscribe(resultado => {
-          this.toastr.success('Receita atulizada com sucesso!');
+          this.toastr.success('Receita atualizada com sucesso!');
           this.dialogRef.close();
         })
       }else{

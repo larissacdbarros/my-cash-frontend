@@ -8,6 +8,7 @@ import { ReceitalistComponent } from '../receita/receitalist/receitalist.compone
 import { DespesalistComponent } from '../despesa/despesalist/despesalist.component';
 import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { ReceitaService } from '../../sevices/receita.service';
+import { DespesaCartaoComponent } from '../despesaCartao/despesaCartao.component';
 
 
 
@@ -33,6 +34,7 @@ export class DashboardComponent implements OnInit {
 
   constructor(private receita : MatDialog, private despesa : MatDialog,
               private cartaocredito : MatDialog,
+
               private receitaService: ReceitaService)  {
 
 
@@ -47,8 +49,8 @@ export class DashboardComponent implements OnInit {
     this.despesa.open(DespesaComponent);
   }
 
-  openDialog3() {
-    this.cartaocredito.open(CartaocreditoComponent);
+  openDialogAdicionarDespesaCartao() {
+    this.cartaocredito.open(DespesaCartaoComponent);
   }
 
   mostrarLista1() {
@@ -58,7 +60,7 @@ export class DashboardComponent implements OnInit {
   mostrarLista2() {
     this.exibirLista2 = !this.exibirLista2;
   }
-  mostrarLista3() {
+  listarDespesaCartao() {
     this.exibirLista3 = !this.exibirLista3;
   }
 

@@ -25,6 +25,11 @@ import { ToastrModule } from 'ngx-toastr';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
 
+import { DespesaCartaoComponent } from './components/componentDashboard/despesaCartao/despesaCartao.component';
+import { DespesaCartaoListComponent } from './components/componentDashboard/despesaCartao/despesaCartaoList/despesaCartaoList.component';
+import { DespesaCartaoDeleteComponent } from './components/componentDashboard/despesaCartao/DespesaCartaoDelete/DespesaCartaoDelete.component';
+import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/despesaCartao/despesaCartaoDetalhes/despesaCartaoDetalhes.component';
+
 
 
 
@@ -40,7 +45,12 @@ import { CommonModule } from '@angular/common';
     CartaocreditoComponent,
     ReceitalistComponent,
     CartaocreditolistComponent,
-    DespesalistComponent
+    DespesalistComponent,
+    DespesaCartaoComponent,
+    DespesaCartaoListComponent,
+    DespesaCartaoDetalhesComponent,
+    DespesaCartaoDeleteComponent
+
 
 
 
@@ -57,7 +67,7 @@ import { CommonModule } from '@angular/common';
     MatIconModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
 
 
 
