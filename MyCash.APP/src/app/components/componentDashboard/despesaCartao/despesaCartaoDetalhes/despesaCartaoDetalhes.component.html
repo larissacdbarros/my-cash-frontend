@@ -1,0 +1,41 @@
+
+<div>
+  <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="cancelar()"></button>
+  </div>
+  <h1>Detalhes Despesa Cartão</h1>
+
+</div>
+  <div class="border border-light rounded p-3 shadow">
+    <table class="table table-hover">
+        <tbody>
+            <tr>
+              <td>Descrição</td>
+              <td>{{data.descricao}}</td>
+            </tr>
+            <tr>
+                <td>Categoria</td>
+                <td>{{data.subcategoriaDespesa.categoriaDespesa.tipo}}</td>
+            </tr>
+            <tr>
+              <td>Subcategoria</td>
+              <td>{{data.subcategoriaDespesa.tipo}}</td>
+            </tr>
+            <tr>
+              <td>Valor</td>
+              <td>{{data.valor}}</td>
+            </tr>
+            <tr>
+              <td>Data</td>
+              <td>{{data.data}}</td>
+            </tr>
+            <tr>
+              <td>Mês da Fatura</td>
+              <td>{{data.fatura.mes}}</td>
+            </tr>
+        </tbody>
+    </table>
+<br>
+
+
+

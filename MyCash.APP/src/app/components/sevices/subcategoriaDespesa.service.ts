@@ -5,7 +5,6 @@ import { environment } from 'src/environments/environment';
 import { SubcategoriaDespesa } from '../models/SubcategoriaDespesa';
 
 
-
 const httpOptions = {
   headers: new HttpHeaders({
     'content-Type': 'application/json'
@@ -32,5 +31,6 @@ GetById(id: number): Observable<SubcategoriaDespesa>{
 // CreateSubcategoriaDespesa(receita: SubcategoriaDespesa):Observable<any>{
 //   return this.http.post<SubcategoriaDespesa>(this.url, SubcategoriaDespesa, httpOptions);
 // }
+
 
 }

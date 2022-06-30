@@ -27,6 +27,11 @@ import { CommonModule } from '@angular/common';
 import { DespesadetalhesComponent } from './components/componentDashboard/despesa/despesadetalhes/despesadetalhes.component';
 import { DespesadeleteComponent } from './components/componentDashboard/despesa/despesadelete/despesadelete.component';
 
+import { DespesaCartaoComponent } from './components/componentDashboard/despesaCartao/despesaCartao.component';
+import { DespesaCartaoListComponent } from './components/componentDashboard/despesaCartao/despesaCartaoList/despesaCartaoList.component';
+import { DespesaCartaoDeleteComponent } from './components/componentDashboard/despesaCartao/DespesaCartaoDelete/DespesaCartaoDelete.component';
+import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/despesaCartao/despesaCartaoDetalhes/despesaCartaoDetalhes.component';
+
 
 
 
@@ -43,8 +48,13 @@ import { DespesadeleteComponent } from './components/componentDashboard/despesa/
     ReceitalistComponent,
     CartaocreditolistComponent,
     DespesalistComponent,
+    DespesaCartaoComponent,
+    DespesaCartaoListComponent,
+    DespesaCartaoDetalhesComponent,
+    DespesaCartaoDeleteComponent,
     DespesadetalhesComponent,
     DespesadeleteComponent
+
 
 
 
@@ -61,7 +71,7 @@ import { DespesadeleteComponent } from './components/componentDashboard/despesa/
     MatIconModule,
     CommonModule,
     BrowserAnimationsModule,
-    ToastrModule.forRoot(),
+    ToastrModule.forRoot()
 
 
 

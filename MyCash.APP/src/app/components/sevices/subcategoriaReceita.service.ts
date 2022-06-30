@@ -28,8 +28,5 @@ GetById(id: number): Observable<SubcategoriaReceita>{
   return this.http.get<SubcategoriaReceita>(`${this.url}/${id}`);
 }
 
-// CreateSubcategoriaReceita(receita: SubcategoriaReceita):Observable<any>{
-//   return this.http.post<SubcategoriaReceita>(this.url, SubcategoriaReceita, httpOptions);
-// }
 
 }

@@ -13,9 +13,10 @@ const httpOptions = {
 @Injectable({
   providedIn: 'root'
 })
-export class CategoriaDespesaContaService {
+export class CategoriaDespesaService {
 
-  url = `${environment.baseUrl}/api/CategoriasDespesaConta` ;
+  url = `${environment.baseUrl}/api/CategoriasDespesa` ;
+
 
 constructor(private http: HttpClient) { }
 
@@ -26,6 +27,7 @@ GetAll(): Observable<CategoriaDespesa[]>{
 GetById(id: number): Observable<CategoriaDespesa>{
   return this.http.get<CategoriaDespesa>(`${this.url}/${id}`);
 }
+
 
 // CreateCategoriaDespesaConta(receita: CategoriaDespesaConta):Observable<any>{
 //   return this.http.post<CategoriaDespesaConta>(this.url, categoriaDespesaConta, httpOptions);
