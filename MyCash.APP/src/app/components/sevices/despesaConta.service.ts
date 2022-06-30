@@ -16,7 +16,7 @@ const httpOptions = {
 })
 export class DespesaContaService {
 
-  url = `${environment.baseUrl}/api/DepesaConta` ;
+  url = `${environment.baseUrl}/api/DespesasConta` ;
 
   constructor(private http: HttpClient) { }
 

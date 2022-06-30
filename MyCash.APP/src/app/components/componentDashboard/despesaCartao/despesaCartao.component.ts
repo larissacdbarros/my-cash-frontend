@@ -1,5 +1,5 @@
 import { Component, Inject, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { FormBuilder } from '@angular/forms';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { ToastrService } from 'ngx-toastr';
 import { CartaoCredito } from '../../models/CartaoCredito';
@@ -44,7 +44,7 @@ export class DespesaCartaoComponent implements OnInit {
     private cartaoCreditoService: CartaoCreditoService,
     private fb: FormBuilder,
     private toastr: ToastrService,
-    public dialogRef: MatDialogRef<DespesaCartaoComponent>, @Inject(MAT_DIALOG_DATA) public data: DespesaCartao,) { }
+    public dialogRef: MatDialogRef<DespesaCartaoComponent>, @Inject(MAT_DIALOG_DATA) public data: DespesaCartao) { }
 
   ngOnInit() {
     if(this.data!==null && this.data.despesaCartaoId !== null){
