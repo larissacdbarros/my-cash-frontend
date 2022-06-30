@@ -50,6 +50,7 @@ export class ReceitaComponent implements OnInit {
               private contaService : ContaService,
               private fb: FormBuilder,
               private toastr: ToastrService,
+
               public dialogRef: MatDialogRef<ReceitaComponent>, @Inject(MAT_DIALOG_DATA) public data: Receita,
               ) { }
 
@@ -123,6 +124,7 @@ export class ReceitaComponent implements OnInit {
       });
       }
     }
+
     }
 
   cancelar(): void{

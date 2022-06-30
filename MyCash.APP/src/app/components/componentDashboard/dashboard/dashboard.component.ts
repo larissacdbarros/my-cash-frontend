@@ -9,6 +9,7 @@ import { DespesalistComponent } from '../despesa/despesalist/despesalist.compone
 import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { ReceitaService } from '../../sevices/receita.service';
 import { DespesaCartaoComponent } from '../despesaCartao/despesaCartao.component';
+import { SaldoService } from '../../sevices/saldo.service';
 
 
 
@@ -21,9 +22,9 @@ import { DespesaCartaoComponent } from '../despesaCartao/despesaCartao.component
 export class DashboardComponent implements OnInit {
 
   saldoAtual: Number;
-  saldoReceitas : Number;
-  saldoDespesas : Number;
-  faturaCartao : Number;
+  saldoReceita : Number;
+  saldoDespesa : Number;
+  totalFaturaCartao : Number;
 
    public receitas: Receita[];
 
@@ -32,14 +33,22 @@ export class DashboardComponent implements OnInit {
   exibirLista3 = false;
 
 
+
+
   constructor(private receita : MatDialog, private despesa : MatDialog,
               private cartaocredito : MatDialog,
-
+              private saldoService: SaldoService,
               private receitaService: ReceitaService)  {
 
 
 
    }
+
+   ngOnInit(): void {
+    this.preencherSaldos(1); //aqui deverá ser passada uma conta desse usupario 
+  }
+
+
   openDialogAdicionarReceita() {
     this.receita.open(ReceitaComponent);
 
@@ -64,8 +73,21 @@ export class DashboardComponent implements OnInit {
     this.exibirLista3 = !this.exibirLista3;
   }
 
-  ngOnInit(): void {
+
+
+  preencherSaldos(contaId: Number){
+
+    this.saldoService.GetSaldos(contaId).subscribe(resultado => {
+      this.saldoAtual= resultado.saldoAtual;
+      this.saldoReceita = resultado.saldoReceita;
+      this.saldoDespesa= resultado.saldoDespesa;
+      this.totalFaturaCartao= resultado.totalFaturaCartao;
+    });
+
+
+
   }
+
 
 
 
