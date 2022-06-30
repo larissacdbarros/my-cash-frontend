@@ -24,6 +24,8 @@ import { UsuarioService } from './components/componentSite/cadastro/usuario.serv
 import { ToastrModule } from 'ngx-toastr';
 import {MatIconModule} from '@angular/material/icon';
 import { CommonModule } from '@angular/common';
+import { DespesadetalhesComponent } from './components/componentDashboard/despesa/despesadetalhes/despesadetalhes.component';
+import { DespesadeleteComponent } from './components/componentDashboard/despesa/despesadelete/despesadelete.component';
 
 import { DespesaCartaoComponent } from './components/componentDashboard/despesaCartao/despesaCartao.component';
 import { DespesaCartaoListComponent } from './components/componentDashboard/despesaCartao/despesaCartaoList/despesaCartaoList.component';
@@ -49,7 +51,9 @@ import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/
     DespesaCartaoComponent,
     DespesaCartaoListComponent,
     DespesaCartaoDetalhesComponent,
-    DespesaCartaoDeleteComponent
+    DespesaCartaoDeleteComponent,
+    DespesadetalhesComponent,
+    DespesadeleteComponent
 
 
 
