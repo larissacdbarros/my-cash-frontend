@@ -1,11 +1,14 @@
 export class Receita {
-  receitaId: Number;
-  descricao: string;
-  subcategoriaReceitaId: Number;
-  contaId: Number;
-  valor: Number;
-  data: Date;
-  subcategoriaReceita: any;
-  conta: any;
+receitaId: Number;
+descricao: string;
+subcategoriaReceitaId: Number;
+subcategoriaReceita: any;
+contaId: Number;
+conta: any;
+data: Date;
+valor: Number;
 
 }
+
+
+
