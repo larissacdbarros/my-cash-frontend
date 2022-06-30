@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   Logar(){
-    alert (this.email)
+    
     this.usuarioService.PegarTodos().subscribe((data) => {
       this.usuariosLista = data;
       for (let i = 0; i < data.length; i++) {
