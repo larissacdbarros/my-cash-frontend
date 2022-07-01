@@ -29,9 +29,9 @@ export class DashboardComponent implements OnInit {
 
    public receitas: Receita[];
 
-  exibirLista1 = false;
-  exibirLista2 = false;
-  exibirLista3 = false;
+  exibirLista1!: boolean
+  exibirLista2!: boolean
+  exibirLista3!: boolean
 
 
 
@@ -64,14 +64,21 @@ export class DashboardComponent implements OnInit {
   }
 
   mostrarLista1() {
-    this.exibirLista1 = !this.exibirLista1;
+    this.exibirLista1 = true
+    this.exibirLista2 = false
+    this.exibirLista3 = false
+
   }
 
   listarDespesaConta() {
-    this.exibirLista2 = !this.exibirLista2;
+    this.exibirLista1 = false
+    this.exibirLista2 = true
+    this.exibirLista3 = false
   }
   listarDespesaCartao() {
-    this.exibirLista3 = !this.exibirLista3;
+    this.exibirLista1 = false
+    this.exibirLista2 = false
+    this.exibirLista3 = true
   }
 
 
