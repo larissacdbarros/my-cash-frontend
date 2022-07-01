@@ -1,0 +1,28 @@
+<br>
+<div class="container">
+
+  <h1>Minhas Faturas</h1>
+
+  <table class="table table-striped table-hover" >
+        <div class="border border-light rounded p-3 shadow">
+          <table class="table table-hover">
+              <thead>
+                  <tr>
+                      <th>Referência</th>
+                      <th>Valor Total</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let fatura of faturas">
+                      <td>{{fatura.mes}} / {{fatura.ano}}</td>
+                      <td>{{fatura.valorFatura}} </td>
+                      <td>
+                          <button type="button" class="btn btn-sm btn-success" (click)="pagarFatura(fatura.faturaId)">Pagar</button>
+                      </td>
+                  </tr>
+              </tbody>
+          </table>
+
+      </div>
+  </table>
+  </div>

@@ -10,6 +10,7 @@ import { CartaocreditolistComponent } from '../cartaocredito/cartaocreditolist/c
 import { ReceitaService } from '../../sevices/receita.service';
 import { DespesaCartaoComponent } from '../despesaCartao/despesaCartao.component';
 import { SaldoService } from '../../sevices/saldo.service';
+import { Usuario } from '../../models/Usuario';
 
 
 
@@ -45,7 +46,7 @@ export class DashboardComponent implements OnInit {
    }
 
    ngOnInit(): void {
-    this.preencherSaldos(1); //aqui deverá ser passada uma conta desse usupario 
+    this.preencherSaldos(3); //aqui deverá ser passada uma conta desse usupario
   }
 
 
@@ -72,7 +73,6 @@ export class DashboardComponent implements OnInit {
   listarDespesaCartao() {
     this.exibirLista3 = !this.exibirLista3;
   }
-
 
 
   preencherSaldos(contaId: Number){

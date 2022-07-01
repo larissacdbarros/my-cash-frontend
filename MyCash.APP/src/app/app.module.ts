@@ -31,6 +31,7 @@ import { DespesaCartaoComponent } from './components/componentDashboard/despesaC
 import { DespesaCartaoListComponent } from './components/componentDashboard/despesaCartao/despesaCartaoList/despesaCartaoList.component';
 import { DespesaCartaoDeleteComponent } from './components/componentDashboard/despesaCartao/DespesaCartaoDelete/DespesaCartaoDelete.component';
 import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/despesaCartao/despesaCartaoDetalhes/despesaCartaoDetalhes.component';
+import { PagarFaturaComponent } from './components/componentDashboard/despesaCartao/pagarFatura/pagarFatura.component';
 
 
 
@@ -53,7 +54,8 @@ import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/
     DespesaCartaoDetalhesComponent,
     DespesaCartaoDeleteComponent,
     DespesadetalhesComponent,
-    DespesadeleteComponent
+    DespesadeleteComponent,
+    PagarFaturaComponent
 
 
 
