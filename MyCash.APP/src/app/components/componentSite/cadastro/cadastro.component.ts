@@ -11,9 +11,11 @@ import { UsuarioService } from './usuario.service';
   styleUrls: ['./cadastro.component.css']
 })
 export class CadastroComponent implements OnInit {
-  usuariosList$: Observable<any[]>
+  UsuariosList$!: Observable<any[]>
   formulario: any;
   registerSuccess!: boolean;
+
+
 
   //get propriedade() {return this.formulario.controls}
   constructor(private router: Router, private usuarioService: UsuarioService, private builder: FormBuilder,) {
@@ -21,12 +23,12 @@ export class CadastroComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.usuariosList$ = this.usuarioService.PegarTodos()
-        this.formulario = new FormGroup({
+    this.UsuariosList$ = this.usuarioService.PegarTodos()
+    this.formulario = new FormGroup({
       Nome: new FormControl(null),
-      Sobrenome: new FormControl(null),
-      Email: new FormControl(null),
-      Senha : new FormControl(null)
+      Sobrenome: new FormControl (null),
+      Email: new FormControl (null),
+      Senha : new FormControl(null),
     })
     this.registerSuccess = false
   }
@@ -37,11 +39,14 @@ export class CadastroComponent implements OnInit {
   EnviarFormulario(){
     const usuario: Usuario = this.formulario.value;
     this.registerSuccess =true
-    this.usuarioService.SalvarUsuario(usuario).subscribe(
-      (resultado) => setTimeout(() => {
-      }, 3100)
-      )
-    }
-
+    this.usuarioService.AddUsuario(usuario).subscribe(
+      (resultado) =>setTimeout(() => {
+        this.router.navigate(['login']);
+      }, 500 )
+    )
   }
 
+  Logar(){
+    this.router.navigate(['']);
+  }
+}

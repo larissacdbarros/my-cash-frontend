@@ -23,5 +23,7 @@ export class UsuarioService {
     SalvarUsuario(usuario : Usuario): Observable<any>{
       return this.http.post<Usuario>(this.url, usuario, httpOptions);
     }
+    AddUsuario(usuario : Usuario): Observable<any>{
+      return this.http.post<Usuario>(this.url, usuario, httpOptions);
 }
-
+}

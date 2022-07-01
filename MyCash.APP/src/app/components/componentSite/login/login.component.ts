@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
   }
 
   Logar(){
-    
+
     this.usuarioService.PegarTodos().subscribe((data) => {
       this.usuariosLista = data;
       for (let i = 0; i < data.length; i++) {
@@ -47,7 +47,7 @@ export class LoginComponent implements OnInit {
           this.loginLoad = true;
           setTimeout(() => {
             this.router.navigate(['dashboard']);
-          }, 2000);
+          }, 100);
         }
       }
       if (this.userValido == false) {

@@ -20,7 +20,7 @@
                       <td>{{despesaConta.subcategoriaDespesa.categoriaDespesa.tipo}} </td>
                       <td>{{despesaConta.subcategoriaDespesa.tipo}}</td>
                       <td>R$ {{despesaConta.valor}}</td>
-                      <td>{{despesaConta.data}}</td>
+                      <td>{{despesaConta.data| date:'dd-MM-yyyy'}}</td>
                       <td>
                           <button type="button" class="btn btn-sm btn-primary"(click)="openDialogDespesaContaEditar(despesaConta.despesaContaId)">Editar</button> |
                           <button type="button" class="btn btn-sm btn-warning" (click)="openDialogDespesaContaDetalhes(despesaConta.despesaContaId)">Detalhes</button> |

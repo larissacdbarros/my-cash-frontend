@@ -22,7 +22,7 @@
                     <td>{{receita.subcategoriaReceita.categoriaReceita.tipo}} </td>
                     <td>{{receita.subcategoriaReceita.tipo}}</td>
                     <td>R$ {{receita.valor}}</td>
-                    <td>{{receita.data}}</td>
+                    <td>{{receita.data| date:'dd-MM-yyyy'}}</td>
                     <td>{{receita.conta.descricao}}</td>
                     <td>
                         <button type="button" class="btn btn-sm btn-primary"(click)="openDialogReceitaEditar(receita.receitaId)">Editar</button> |
