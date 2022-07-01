@@ -17,7 +17,23 @@ import { ReceitadetalhesComponent } from '../receitadetalhes/receitadetalhes.com
 export class ReceitalistComponent implements OnInit {
 
   public receitas: Receita[];
-  
+  public meses: string[] = [
+     'Janeiro',
+      'Fevereiro',
+      'Março',
+      'Abril',
+      'Maio',
+      'Junho',
+      'Julho',
+      'Agosto',
+      'Setembro',
+      'Outubro',
+      'Novembro',
+      'Dezembro'
+  ]
+
+
+
 
 
   constructor(private receitaService: ReceitaService,
@@ -29,7 +45,7 @@ export class ReceitalistComponent implements OnInit {
     this.receitaService.GetAll().subscribe( resultado =>{
       this.receitas = resultado;
     }
-    );
+    )
   }
   openDialogReceitaEditar(id: Number) {
     const dialogRef = this.dialog.open(ReceitaComponent,

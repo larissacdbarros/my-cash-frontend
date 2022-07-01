@@ -31,9 +31,13 @@ import { DespesaCartaoComponent } from './components/componentDashboard/despesaC
 import { DespesaCartaoListComponent } from './components/componentDashboard/despesaCartao/despesaCartaoList/despesaCartaoList.component';
 import { DespesaCartaoDeleteComponent } from './components/componentDashboard/despesaCartao/DespesaCartaoDelete/DespesaCartaoDelete.component';
 import { DespesaCartaoDetalhesComponent } from './components/componentDashboard/despesaCartao/despesaCartaoDetalhes/despesaCartaoDetalhes.component';
+
+import { PagarFaturaComponent } from './components/componentDashboard/despesaCartao/pagarFatura/pagarFatura.component';
+
 import {MatDatepickerModule,} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core'
 import {MatFormFieldModule} from '@angular/material/form-field';
+
 
 
 
@@ -57,7 +61,8 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     DespesaCartaoDetalhesComponent,
     DespesaCartaoDeleteComponent,
     DespesadetalhesComponent,
-    DespesadeleteComponent
+    DespesadeleteComponent,
+    PagarFaturaComponent
 
 
 
@@ -79,7 +84,7 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     MatDatepickerModule,
     MatNativeDateModule,
     MatFormFieldModule,
-   
+
 
 
 

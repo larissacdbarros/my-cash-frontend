@@ -1,5 +1,21 @@
 <br>
+
+
+
 <div class="container">
+  <div class="col-sm-12 col-12 text-sm-end ">
+    <div class="dropdown">
+      <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+        Mês
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" *ngFor="let mes of meses">
+        <li><a class="dropdown-item" href="#">{{mes}}</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+
 <h1>Minhas Receitas</h1>
 
 <table class="table table-striped table-hover" >
@@ -19,7 +35,7 @@
             <tbody>
                 <tr *ngFor="let receita of receitas">
                     <td>{{receita.descricao}}</td>
-                    <td>{{receita.subcategoriaReceita.categoriaReceita.tipo}} </td>
+                    <td>{{receita.subcategoriaReceita.categoriaReceita.tipo}}  <mat-icon>{{receita.subcategoriaReceita.categoriaReceita.icon}}</mat-icon> </td>
                     <td>{{receita.subcategoriaReceita.tipo}}</td>
                     <td>R$ {{receita.valor}}</td>
                     <td>{{receita.data| date:'dd-MM-yyyy'}}</td>

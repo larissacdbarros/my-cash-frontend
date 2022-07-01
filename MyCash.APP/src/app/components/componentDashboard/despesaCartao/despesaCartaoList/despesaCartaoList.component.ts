@@ -5,6 +5,7 @@ import { DespesaCartaoService } from 'src/app/components/sevices/despesaCartao.s
 import { DespesaCartaoComponent } from '../despesaCartao.component';
 import { DespesaCartaoDeleteComponent } from '../DespesaCartaoDelete/DespesaCartaoDelete.component';
 import { DespesaCartaoDetalhesComponent } from '../despesaCartaoDetalhes/despesaCartaoDetalhes.component';
+import { PagarFaturaComponent } from '../pagarFatura/pagarFatura.component';
 
 @Component({
   selector: 'app-despesaCartaoList',
@@ -44,6 +45,8 @@ export class DespesaCartaoListComponent implements OnInit {
     });
   }
 
+
+
   openDialogDeletarDespesaCartao(id: Number){
       const dialogRef = this.dialog.open(DespesaCartaoDeleteComponent,{
         data: {despesaCartaoId: id},
@@ -57,4 +60,18 @@ export class DespesaCartaoListComponent implements OnInit {
       })
     }
 
+   openDialogPagarFatura(){
+    const dialogRef = this.dialog.open(PagarFaturaComponent,{
+      data: {},
+      width: '600px'
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      this.despesaCartaoService.GetAll().subscribe( resultado =>{
+        this.despesaCartao = resultado;
+      }
+      );
+    })
+   }
+
 }
+

@@ -148,8 +148,19 @@
   margin-bottom: 30px;
 }
 
+.container {
 
+  margin: 25px;
+  width: 350px;
+  height: 200px;
 
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
 
 
