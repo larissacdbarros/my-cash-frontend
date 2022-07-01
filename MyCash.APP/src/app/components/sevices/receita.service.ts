@@ -19,8 +19,8 @@ export class ReceitaService {
 
 constructor(private http: HttpClient) { }
 
-GetAll(): Observable<Receita[]>{
-  return this.http.get<Receita[]>(`${this.url}`);
+GetByConta(contaId: Number): Observable<Receita[]>{
+  return this.http.get<Receita[]>(`${this.url}/conta/${contaId}`);
 }
 
 GetById(id: Number): Observable<Receita>{

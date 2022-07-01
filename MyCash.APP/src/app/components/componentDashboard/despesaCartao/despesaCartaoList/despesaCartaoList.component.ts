@@ -15,13 +15,16 @@ import { PagarFaturaComponent } from '../pagarFatura/pagarFatura.component';
 export class DespesaCartaoListComponent implements OnInit {
 
   public despesaCartao: DespesaCartao[];
+  public contaId: Number;
+  public usuarioId: Number;
 
   constructor(private despesaCartaoService: DespesaCartaoService,
             private dialog : MatDialog
               ) { }
 
   ngOnInit() {
-    this.despesaCartaoService.GetAll().subscribe( resultado =>{
+    this.contaId = Number(localStorage.getItem('contaId'));
+    this.despesaCartaoService.GetByConta(this.contaId).subscribe( resultado =>{
       this.despesaCartao = resultado;
     }
     );
@@ -31,7 +34,7 @@ export class DespesaCartaoListComponent implements OnInit {
     const dialogRef = this.dialog.open(DespesaCartaoComponent,
       {data: {despesaCartaoId: id}});
       dialogRef.afterClosed().subscribe(result => {
-      this.despesaCartaoService.GetAll().subscribe( resultado =>{
+      this.despesaCartaoService.GetByConta(this.contaId).subscribe( resultado =>{
         this.despesaCartao = resultado;
       }
       );
@@ -53,7 +56,7 @@ export class DespesaCartaoListComponent implements OnInit {
         width: '600px'
       });
       dialogRef.afterClosed().subscribe(result => {
-        this.despesaCartaoService.GetAll().subscribe( resultado =>{
+        this.despesaCartaoService.GetByConta(this.contaId).subscribe( resultado =>{
           this.despesaCartao = resultado;
         }
         );
@@ -66,7 +69,7 @@ export class DespesaCartaoListComponent implements OnInit {
       width: '600px'
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.despesaCartaoService.GetAll().subscribe( resultado =>{
+      this.despesaCartaoService.GetByConta(this.contaId).subscribe( resultado =>{
         this.despesaCartao = resultado;
       }
       );

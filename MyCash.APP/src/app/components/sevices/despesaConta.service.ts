@@ -21,8 +21,8 @@ export class DespesaContaService {
   constructor(private http: HttpClient) { }
 
 
-GetAll(): Observable<DespesaConta[]>{
-  return this.http.get<DespesaConta[]>(`${this.url}`);
+  GetByConta(contaId: Number): Observable<DespesaConta[]>{
+  return this.http.get<DespesaConta[]>(`${this.url}/conta/${contaId}`);
 }
 
 GetById(id: Number): Observable<DespesaConta>{

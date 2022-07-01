@@ -34,6 +34,8 @@ export class DespesaComponent implements OnInit {
   public categorias: CategoriaDespesa[];
   public subcategorias: SubcategoriaDespesa[];
   public contas: Conta[];
+  public usuarioId: Number
+
 
   public submitted = false;
   public titulo: string;
@@ -50,6 +52,8 @@ export class DespesaComponent implements OnInit {
 
 
   ngOnInit() {
+    this.usuarioId = Number(localStorage.getItem('usuarioId'));
+
 
     if(this.data!==null && this.data.despesaContaId !== null){
       this.despesaContaService.GetById(this.data.despesaContaId).subscribe(resultado => {
@@ -83,7 +87,7 @@ carregarCategoria(){
 }
 
 carregarConta(){
-  this.contaService.GetAll().subscribe(resultado => {
+  this.contaService.GetByUsuarioId(this.usuarioId).subscribe(resultado => {
     this.contas = resultado;
   });
 }

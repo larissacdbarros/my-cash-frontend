@@ -13,6 +13,7 @@ import { DespesaComponent } from '../despesa.component';
 export class DespesadeleteComponent implements OnInit {
 
   public despesaConta: DespesaConta[];
+  public contaId: Number;
 
   constructor(public dialogRef: MatDialogRef<DespesaComponent>,
               @Inject(MAT_DIALOG_DATA) public data: DespesaConta,
@@ -22,6 +23,7 @@ export class DespesadeleteComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.contaId = Number(localStorage.getItem('contaId'));
   }
 
   naoDeletar(): void{
@@ -32,7 +34,7 @@ export class DespesadeleteComponent implements OnInit {
     this.despesaContaService.Delete(id).subscribe(resultado => {
       this.dialogRef.close();
       this.toastr.success('Receita excluída com sucesso!');
-      this.despesaContaService.GetAll().subscribe( resultado =>{
+      this.despesaContaService.GetByConta(this.contaId).subscribe( resultado =>{
       this.despesaConta = resultado;
       }
       );
