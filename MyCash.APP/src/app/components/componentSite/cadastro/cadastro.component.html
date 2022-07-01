@@ -1,10 +1,5 @@
-
-
-<body>
-
-
-<div class="toaster" *ngIf="registerSuccess"></div>
-<section class="vh" style="background-color: #eee;">
+<div class="toaster" *ngIf="registerSuccess"><p class="toaster-p">Registrado com Sucesso</p></div>
+<div class="vh" style="background-color: #eee;">
   <div class="container">
     <div class="row d-flex justify-content-center align-items-center h-100">
       <div class="col-lg-12 col-xl-11">
@@ -13,30 +8,30 @@
             <div class="row justify-content-center">
               <div class="col-md-10 col-lg-6 col-xl-5 order-2 order-lg-1">
                 <p class="text-center h1 fw-bold mb-5 mx-1 mx-md-4 mt-4">Registrar</p>
-                <div  [formGroup]="formulario" class="mx-1 mx-md-4">
+                <form>
                   <div class="d-flex flex-row align-items-center mb-4">
-                    <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-                    <form class="form-outline flex-fill mb-0" >
- 		                  <input formControlName="Nome" id="nome"  type="text"  class="form-control"   placeholder="Nome" required/>
+                    <i class="fas fa-user fa-lg me-3 fa-fw "></i>
+                    <form class="form-outline flex-fill mb-0" [formGroup]="formulario" (ngSubmit)="EnviarFormulario()" class="register-wrapper container" >
+ 		                  <input  formControlName="Nome"  type="text"  class="form-control"   placeholder="Nome" />
                      <!--  <div ngIf="propriedade.Nome.touched && propriedade.Nome.invalid">
                         <label style="color: red;"> Campo Obrigatorio!</label>
                       </div>--> <br>
-                      <input formControlName="Sobrenome" id="sobrenome" type="text"   class="form-control"  placeholder="Sobrenome" required/>
+                      <input formControlName="Sobrenome" type="text"   class="form-control"  placeholder="Sobrenome" />
                     <!--  <div ngIf="propriedade.Sobrenome.touched && propriedade.Sobrenome.invalid">
                         <label style="color: red;"> Campo Obrigatorio!</label>
                       </div>--><br>
-                      <input formControlName="Email" id="email"  type="text"  class="form-control"  placeholder="Email" required/>
+                      <input formControlName="Email"  class="form-control"  placeholder="Email" />
                       <!--<div ngIf="propriedade.Email.touched && propriedade.Email.invalid">
                         <label style="color: red;"> Campo Obrigatorio!</label>
                       </div>--><br>
-                      <input formControlName="Senha" id="senha"  type="password"   class="form-control"  placeholder="Senha" required />
+                      <input formControlName="Senha"  type="password"   class="form-control"  placeholder="Senha"  />
                      <!-- <div ngIf="propriedade.Senha.touched && propriedade.Senha.invalid">
                         <label style="color: red;"> Campo Obrigatorio!</label>
                       </div>--><br>
-                      <button type="submit"  class="btn btn-primary btn-lg" (click)="EnviarFormulario() ">Registrar</button>
+                      <button type="submit"  class="btn btn-primary btn-lg">Registrar</button>
                     </form>
                   </div>
-                </div>
+                </form>
               </div>
               <div class="col-md-10 col-lg-6 col-xl-7 d-flex align-items-center order-1 order-lg-2">
                 <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp"
@@ -48,8 +43,7 @@
       </div>
     </div>
   </div>
-</section>
-</body>
+</div>
 <footer id="footer" class="footer">
   <div class="footer-top">
   <div class="container">
