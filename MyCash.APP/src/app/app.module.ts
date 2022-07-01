@@ -20,7 +20,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { ReceitalistComponent } from './components/componentDashboard/receita/receitalist/receitalist.component';
 import { CartaocreditolistComponent } from './components/componentDashboard/cartaocredito/cartaocreditolist/cartaocreditolist.component';
 import { DespesalistComponent } from './components/componentDashboard/despesa/despesalist/despesalist.component';
-import { UsuarioService } from './components/componentSite/cadastro/usuario.service';
+import { UsuarioService } from './components/sevices/usuario.service';
 import { ToastrModule } from 'ngx-toastr';
 import { MatIconModule } from '@angular/material/icon';
 import { CommonModule } from '@angular/common';

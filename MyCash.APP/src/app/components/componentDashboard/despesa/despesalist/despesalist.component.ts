@@ -14,13 +14,15 @@ import { DespesadetalhesComponent } from '../despesadetalhes/despesadetalhes.com
 export class DespesalistComponent implements OnInit {
 
   public despesaConta: DespesaConta[];
+  public contaId: Number;
 
   constructor(private despesaContaService: DespesaContaService,
     private dialog : MatDialog) {
      }
 
   ngOnInit(): void {
-    this.despesaContaService.GetAll().subscribe( resultado =>{
+    this.contaId = Number(localStorage.getItem('contaId'));
+    this.despesaContaService.GetByConta(this.contaId).subscribe( resultado =>{
       this.despesaConta = resultado;
     }
     );
@@ -30,7 +32,7 @@ export class DespesalistComponent implements OnInit {
     const dialogRef = this.dialog.open(DespesaComponent,
       {data: {despesaContaId: id}});
       dialogRef.afterClosed().subscribe(result => {
-      this.despesaContaService.GetAll().subscribe( resultado =>{
+      this.despesaContaService.GetByConta(this.contaId).subscribe( resultado =>{
         this.despesaConta = resultado;
       }
       );
@@ -50,7 +52,7 @@ export class DespesalistComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.despesaContaService.GetAll().subscribe( resultado =>{
+      this.despesaContaService.GetByConta(this.contaId).subscribe( resultado =>{
         this.despesaConta = resultado;
       }
       );

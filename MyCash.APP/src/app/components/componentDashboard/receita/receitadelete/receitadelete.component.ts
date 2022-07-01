@@ -13,6 +13,8 @@ import { ToastrService } from 'ngx-toastr';
 export class ReceitadeleteComponent implements OnInit {
 
   public receitas: Receita[];
+  public contaId: Number;
+
 
   constructor(public dialogRef: MatDialogRef<ReceitaComponent>,
               @Inject(MAT_DIALOG_DATA) public data: Receita,
@@ -20,6 +22,7 @@ export class ReceitadeleteComponent implements OnInit {
                 private toastr: ToastrService) { }
 
   ngOnInit() {
+    this.contaId = Number(localStorage.getItem('contaId'));
   }
 
   naoDeletar(): void{
@@ -30,7 +33,7 @@ export class ReceitadeleteComponent implements OnInit {
     this.receitaService.Delete(id).subscribe(resultado => {
       this.dialogRef.close();
       this.toastr.success('Receita excluída com sucesso!');
-      this.receitaService.GetAll().subscribe( resultado =>{
+      this.receitaService.GetByConta(this.contaId).subscribe( resultado =>{
       this.receitas = resultado;
       }
       );

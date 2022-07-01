@@ -35,6 +35,9 @@ export class DespesaCartaoComponent implements OnInit {
   public categorias: CategoriaDespesa[];
   public subcategorias: SubcategoriaDespesa[];
   public contas: Conta[];
+  public usuarioId: Number
+
+
 
 
   public submitted = false;
@@ -49,6 +52,8 @@ export class DespesaCartaoComponent implements OnInit {
     public dialogRef: MatDialogRef<DespesaCartaoComponent>, @Inject(MAT_DIALOG_DATA) public data: DespesaCartao) { }
 
   ngOnInit() {
+    this.usuarioId = Number(localStorage.getItem('usuarioId'));
+
     if(this.data!==null && this.data.despesaCartaoId !== null){
       this.despesaCartaoService.GetById(this.data.despesaCartaoId).subscribe(resultado => {
 
@@ -82,7 +87,7 @@ export class DespesaCartaoComponent implements OnInit {
   }
 
   carregarConta(){
-    this.contaService.GetAll().subscribe(resultado => {
+    this.contaService.GetByUsuarioId(this.usuarioId).subscribe(resultado => {
       this.contas = resultado;
     });
   }

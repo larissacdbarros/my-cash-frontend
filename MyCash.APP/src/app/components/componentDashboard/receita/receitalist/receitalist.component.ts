@@ -17,32 +17,14 @@ import { ReceitadetalhesComponent } from '../receitadetalhes/receitadetalhes.com
 export class ReceitalistComponent implements OnInit {
 
   public receitas: Receita[];
-  public meses: string[] = [
-     'Janeiro',
-      'Fevereiro',
-      'Março',
-      'Abril',
-      'Maio',
-      'Junho',
-      'Julho',
-      'Agosto',
-      'Setembro',
-      'Outubro',
-      'Novembro',
-      'Dezembro'
-  ]
-
-
-
-
+  public contaId: Number;
 
   constructor(private receitaService: ReceitaService,
               private dialog : MatDialog) { }
 
-
-
   ngOnInit(): void {
-    this.receitaService.GetAll().subscribe( resultado =>{
+    this.contaId = Number(localStorage.getItem('contaId'));
+    this.receitaService.GetByConta(this.contaId).subscribe( resultado =>{
       this.receitas = resultado;
     }
     )
@@ -51,7 +33,7 @@ export class ReceitalistComponent implements OnInit {
     const dialogRef = this.dialog.open(ReceitaComponent,
       {data: {receitaId: id}});
       dialogRef.afterClosed().subscribe(result => {
-      this.receitaService.GetAll().subscribe( resultado =>{
+      this.receitaService.GetByConta(this.contaId).subscribe( resultado =>{
         this.receitas = resultado;
       }
       );
@@ -72,7 +54,7 @@ export class ReceitalistComponent implements OnInit {
       width: '600px'
     });
     dialogRef.afterClosed().subscribe(result => {
-      this.receitaService.GetAll().subscribe( resultado =>{
+      this.receitaService.GetByConta(this.contaId).subscribe( resultado =>{
         this.receitas = resultado;
       }
       );

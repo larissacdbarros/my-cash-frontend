@@ -46,7 +46,9 @@ export class DashboardComponent implements OnInit {
    }
 
    ngOnInit(): void {
-    this.preencherSaldos(3); //aqui deverá ser passada uma conta desse usupario
+    var contaId = localStorage.getItem('contaId');
+    console.log(contaId)
+    this.preencherSaldos(Number(contaId)); //aqui deverá ser passada uma conta desse usupario
   }
 
 

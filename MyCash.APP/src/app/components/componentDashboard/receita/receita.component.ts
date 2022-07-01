@@ -42,6 +42,7 @@ export class ReceitaComponent implements OnInit {
   public categorias: CategoriaReceita[];
   public subcategorias: SubcategoriaReceita[];
   public contas: Conta[];
+  public usuarioId: Number
 
   public submitted = false;
   public titulo: string;
@@ -58,6 +59,7 @@ export class ReceitaComponent implements OnInit {
               ) { }
 
   ngOnInit() {
+    this.usuarioId = Number(localStorage.getItem('usuarioId'));
 
   if(this.data!==null && this.data.receitaId !== null){
       this.receitaService.GetById(this.data.receitaId).subscribe(resultado => {
@@ -91,7 +93,7 @@ export class ReceitaComponent implements OnInit {
   }
 
   carregarConta(){
-    this.contaService.GetAll().subscribe(resultado => {
+    this.contaService.GetByUsuarioId(this.usuarioId).subscribe(resultado => {
       this.contas = resultado;
     });
   }

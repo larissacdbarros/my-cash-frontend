@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { Usuario } from '../cadastro/usuario';
-import { UsuarioService } from '../cadastro/usuario.service';
+import { UsuarioService } from '../../sevices/usuario.service';
 import { Observable } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
+import { Usuario } from '../../models/Usuario';
+
 
 @Component({
   selector: 'app-login',
@@ -11,48 +13,36 @@ import { Observable } from 'rxjs';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  usuariosLista: any =[];
-  email: '';
-  password: '';
-  userValido!: boolean;
-  userInvalido!: boolean;
-  loginLoad: boolean = false
 
-  constructor(private usuarioService: UsuarioService, private router : Router) { }
+  formulario = this.fb.group({
+  email: ['', Validators.required],
+  password: ['', Validators.required]
+  });
+
+  constructor(private usuarioService: UsuarioService,
+                private router : Router,
+                private fb: FormBuilder,
+                private toastr: ToastrService) { }
 
   ngOnInit(): void {
 
-    this.userValido = false;
-    //   this.formulario = new FormGroup({
-    //   Email: new FormControl(null,[Validators.required, Validators.email]),
-    //   Senha : new FormControl(null, [Validators.required])
-    // })
-    // this.registerSuccess = false
-
   }
 
+
   Logar(){
+    this.usuarioService.GetUsuarioLogado(
 
-    this.usuarioService.PegarTodos().subscribe((data) => {
-      this.usuariosLista = data;
-      for (let i = 0; i < data.length; i++) {
+      this.formulario.controls.email.value,
+      this.formulario.controls.password.value ).subscribe(resultado=>{
+        console.log(resultado)
+      this.toastr.success('Acesso permitido.');
+      localStorage.setItem('islogado', 'true')
+      localStorage.setItem('contaId', String (resultado.conta.contaId))
+      localStorage.setItem('usuarioId', String (resultado.usuarioId))
+      this.router.navigate(['dashboard']);
+    }, error =>{
+      this.toastr.error('Acesso negado.');
+    })
 
-        if
-
-        (this.usuariosLista[i].email== this.email &&
-        this.usuariosLista[i].senha== this.password)
-        {
-          this.userValido = true;
-          this.userInvalido = false;
-          this.loginLoad = true;
-          setTimeout(() => {
-            this.router.navigate(['dashboard']);
-          }, 100);
-        }
-      }
-      if (this.userValido == false) {
-        this.userInvalido = true;
-      }
-    });
   }
 }

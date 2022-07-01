@@ -12,7 +12,7 @@ import { FaturaService } from 'src/app/components/sevices/fatura.service';
 export class PagarFaturaComponent implements OnInit {
 
   public faturas: Fatura[];
-
+  public contaId: Number;
   constructor(private faturaService : FaturaService,
     private toastr: ToastrService,
     public dialogRef: MatDialogRef<PagarFaturaComponent>,) { }
@@ -20,7 +20,8 @@ export class PagarFaturaComponent implements OnInit {
 
 
   ngOnInit() {
-    this.getFaturasAbertas(3);
+    this.contaId = Number(localStorage.getItem('contaId'));
+    this.getFaturasAbertas(this.contaId);
 
   }
 

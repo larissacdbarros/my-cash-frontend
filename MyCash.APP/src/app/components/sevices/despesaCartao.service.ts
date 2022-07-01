@@ -18,8 +18,8 @@ export class DespesaCartaoService {
   url = `${environment.baseUrl}/api/despesaCartao` ;
 constructor(private http: HttpClient) { }
 
-GetAll(): Observable<DespesaCartao[]>{
-  return this.http.get<DespesaCartao[]>(`${this.url}`);
+GetByConta(contaId: Number): Observable<DespesaCartao[]>{
+  return this.http.get<DespesaCartao[]>(`${this.url}/conta/${contaId}`);
 }
 
 GetById(id: Number): Observable<DespesaCartao>{
